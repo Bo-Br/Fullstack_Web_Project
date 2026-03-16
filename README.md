@@ -1,6 +1,11 @@
 # Fullstack_Web_Project
 Reservation system for local services
 
+---
+**Option A - Système de Réservation pour Services Locaux**
+
+---
+
 Contexte et besoin
 
 Un **salon de coiffure** souhaite moderniser sa prise de rendez-vous et offrir à ses clients la possibilité de réserver en ligne **24h/24**.
