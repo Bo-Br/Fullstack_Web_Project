@@ -27,7 +27,7 @@ Un **salon de coiffure** souhaite moderniser sa prise de rendez-vous et offrir �
 
 J1 
 
-- [ ] Livrable : Document d'analyse (1-2 pages) avec personas 
+- [x] Livrable : Document d'analyse (1-2 pages) avec personas 
 > Définition précise du public cible, identification des besoins utilisateurs, création de personas. Analyse concurrentielle simple.
 
 - [ ] Livrable : Wireframes complets + maquettes visuelles validées par formateur 
