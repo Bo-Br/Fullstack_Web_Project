@@ -43,7 +43,7 @@ J2
 - [ ] Livrable : Pages HTML complètes avec CSS responsive fonctionnel 
 > Création structure HTML sémantique, intégration CSS responsive avec Bootstrap. Mise en place navigation et layout général.
 
-- [ ] Livrable : Environnement dev opérationnel + premier commit Git 
+- [x] Livrable : Environnement dev opérationnel + premier commit Git 
 > Configuration Laragon, création base de données, initialisation Git, structure dossiers projet.
 
 - [ ] Livrable : Interface utilisateur complètement interactive 
