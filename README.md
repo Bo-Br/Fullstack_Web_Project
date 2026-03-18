@@ -30,10 +30,10 @@ J1
 - [x] Livrable : Document d'analyse (1-2 pages) avec personas 
 > Définition précise du public cible, identification des besoins utilisateurs, création de personas. Analyse concurrentielle simple.
 
-- [ ] Livrable : Wireframes complets + maquettes visuelles validées par formateur 
+- [x] Livrable : Wireframes complets + maquettes visuelles validées par formateur 
 > Création wireframes papier puis numériques (Figma/Balsamiq). Définition arborescence, navigation, écrans principaux.
 
-- [ ] Livrable : Schéma BDD + scripts SQL de création + jeu de données test 
+- [x] Livrable : Schéma BDD + scripts SQL de création + jeu de données test 
 > Conception MCD/MLD, définition tables, relations, contraintes. Validation cohérence avec fonctionnalités.
 
 ------
