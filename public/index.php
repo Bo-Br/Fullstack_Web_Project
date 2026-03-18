@@ -16,21 +16,21 @@
 
     <section id = "hero">
 
-        <div id = "image_hero">
-            
-            <img src="assets/images/bck_image_hero.jpg" alt="">
+        <div id = "hero_contenair">
+            <div class = "hero_content">
+                <img class="logo_hero" src="assets/images/logo_hero.png" alt="">
+                <div class = "texte_hero">
+                    
+                    <h1> Un salon a l'ambiance Cozy </h1>
+        
+                    <p> Venez découvrir des services de coiffure et de barbe de qualité qui allient savoir-faire traditionnel et modernité. En plus de ses différents services de soins, le salon vous offre l'accès à des paires de chaussures rares et exclusives grâce à son Sneakers shop (magasin de chaussures sneakers). </p>
+        
+                    <a class = "btn_nav" href=""> Rendez-Vous </a>
 
+                </div>
+            </div>
         </div>
 
-        <div id = texte_hero>
-            
-            <h1> Un salon a l'ambiance Cozy </h1>
-
-            <p> Venez découvrir des services de coiffure et de barbe de qualité qui allient savoir-faire traditionnel et modernité. En plus de ses différents services de soins, le salon vous offre l'accès à des paires de chaussures rares et exclusives grâce à son Sneakers shop (magasin de chaussures sneakers). </p>
-
-            <a class = "btn_reserver" href=""> Rendez-Vous </a>
-
-        </div>
 
     </section>
 
