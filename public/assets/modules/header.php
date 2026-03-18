@@ -13,8 +13,8 @@
 
         <div>
             <a href="index.php"> Accueil </a>
-            <a class = "btn_reserver" href=""> Rendez-Vous </a>
-            <a href=""> # </a>
+            <a class = "btn_reserver" href="reserver.php"> Rendez-Vous </a>
+            <a href="login.php"> # </a>
         </div>
 
     </div>
