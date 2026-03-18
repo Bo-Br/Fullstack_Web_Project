@@ -41,6 +41,9 @@ Backend :
 
 ## Prérequis
 
+Git : [Télécharger pour windows](https://github.com/git-for-windows/git/releases/download/v2.53.0.windows.2/Git-2.53.0.2-64-bit.exe)
+
+Laragon: [Télécharger pour windows](https://github.com/leokhoa/laragon/releases/download/8.6.1/laragon-wamp.exe)
 
 ------
 
