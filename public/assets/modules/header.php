@@ -11,17 +11,20 @@
 </head>
 <body>
 
-    <div id = "header">
+    <header id="header">
+        <a href="index.php" class="logo_link">
+            <img class="logo_nav" src="assets/images/logo_nav.png" alt="Retour à l'accueil L'Atelier du Barbier">
+        </a>
 
-        <img class="logo_nav" src="assets/images/logo_nav.png" alt=" logo de la navbar">
-
-        <div class= "nav_link">
-            <a href="index.php"> Accueil </a>
-            <a href="reserver.php"><button class = "btn_nav">Rendez-Vous</button></a>
-            <a href="login.php"><button class = "btn_nav"> <img class = "icon_btn" src="assets/images/logo_login.png" alt="logo d'identification"></button></a>
-        </div>
-
-    </div>
+        <nav class="nav_link">
+            <a href="index.php" class="nav_item">Accueil</a>
+            
+            <a href="reserver.php" class="btn_nav">Rendez-Vous</a>
+            <a href="login.php" class="btn_nav btn_icon">
+                <img class="icon_btn" src="assets/images/logo_login.png" alt="Se connecter">
+            </a>
+        </nav>
+    </header>
 
 </body>
 </html>
