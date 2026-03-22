@@ -1,9 +1,14 @@
+
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title> RESERVER </title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -18,15 +23,11 @@
         <div class = "main_page main_reservation">
 
             <h1>Réserver</h1>
-            <form method="POST" action="reservation.php">
+            <form method="POST" action="reserver.php">
                 <div class = "reservation_line">
                     <div class = "reservation_item">
-                        <p>Nom:</p>            
-                        <input type="text" name="nom" placeholder="  Nom" required>
-                    </div>
-                    <div class = "reservation_item">
-                        <p>Prénom:</p>
-                        <input type="text" name="prenom" placeholder="  Prenom" required>
+                        <p>Nom complet:</p>            
+                        <input type="text" name="nom" placeholder="  Nom Complet" required>
                     </div>
                 
                 </div>
@@ -43,7 +44,7 @@
                 <div class = "date_horaire">
                     <div class = "reservation_item">
                         <p>Date:</p>
-                        <input type="date" name="  date" required>
+                        <input type="date" name="date" required>
                     </div>
                     <div class = "reservation_item ">
                         <p> <br></p>
@@ -79,23 +80,69 @@
                     </div>
                     
                 </div>
+
                 <div class = "reservation_line_service">
                         <div class = "reservation_item">
                             <select name="service" class = "reservation_service" required>
                                 <option value="">Choisir un service</option>
-                                <option value="coupe">Coupe</option>
-                                <option value="barbe">Barbe</option>
-                                <option value="combo">Coupe + Barbe</option>
+                                <?php
+                                $sql = "SELECT * FROM services";
+                                $stmt = $pdo->query($sql);
+
+                                while ($service = $stmt->fetch()) {
+                                        echo("<option value=" .$service['id_service'] . ">" . $service['nom'] . "</option>");
+
+                                };
+                                ?>
                             </select><br>
                         </div>
                  </div>
                 
                 <div class = "reservation_line">
-                    <button type="submit" class = "btn_submit">Submit</button>
+                    <button type="submit" name="submit" class="btn_submit">Submit</button>
                 </div>    
         
         
             </form>
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $nom = $_POST['nom'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $telephone = $_POST['telephone'] ?? '';
+    $date = $_POST['date'] ?? '';
+    $horaire = $_POST['horaire'] ?? '';
+    $service = $_POST['service'] ?? '';
+
+    if (!empty($nom) && !empty($email) && !empty($telephone) && !empty($date) && !empty($horaire) && !empty($service)) {
+
+        $date_rdv = $date;
+        $heure_rdv = $horaire . ":00";
+
+        $sql = "INSERT INTO reservations 
+        (service_id, date_rdv, heure_rdv, nom_client, email_client, telephone_client, statut) 
+        VALUES 
+        (:service, :date_rdv, :heure_rdv, :nom, :email, :telephone, :statut)";
+
+        $stmt = $pdo->prepare($sql);
+
+        $stmt->execute([
+            ':service' => $service,
+            ':date_rdv' => $date_rdv,
+            ':heure_rdv' => $heure_rdv,
+            ':nom' => $nom,
+            ':email' => $email,
+            ':telephone' => $telephone,
+            ':statut' => 'en_attente'
+        ]);
+
+        echo "Réservation ajoutée.";
+    } else {
+        echo "Remplis tous les champs.";
+    };
+};
+?>
         </div>
         
     </section>

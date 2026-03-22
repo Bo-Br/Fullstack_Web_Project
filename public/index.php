@@ -1,3 +1,8 @@
+
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,94 +45,35 @@
 
     <div class = "card_content">
         <div class = "card_line">
-            <div class="card_service box_shadow">
-                <div class="card_header">
-                    <h3 class="title">Coupe + Taille de Barbe</h3>
-                    <span class="price">60min - 30€</span>
-                </div>
-                
-                <div class="card_img">
-                    <img src="assets/images/card-coupe-barbe.png" alt="Illustration coupe et barbe">
-                </div>
-                
-                <div class="card_description">
-                    <p>Lorem Ipsum machin truc bidule description Lorem Ipsum machin truc bidule description Lorem Ipsum machin truc bidule description</p>  
-                </div>
-            </div>
 
+<?php
+$sql = "SELECT * FROM services";
+$stmt = $pdo->query($sql);
 
-            <div class="card_service box_shadow">
-                <div class="card_header">
-                    <h3 class="title">Shampoing + Coupe + Coiffure</h3>
-                    <span class="price">30min - 24€</span>
-                </div>
-                
-                <div class="card_img">
-                    <img src="assets/images/card-coupe.png" alt="Illustration coupe et barbe">
-                </div>
-                
-                <div class="card_description">
-                    <p>Lorem Ipsum machin truc bidule description Lorem Ipsum machin truc bidule description Lorem Ipsum machin truc bidule description</p>
-                </div>
-            </div>
+while ($service = $stmt->fetch()) {
 
+        echo("<div class='card_service box_shadow'>");
+        echo("    <div class='card_header'>");
+        echo("        <h3 class='title'>".$service['nom'] . "</h3>");
+        echo("        <span class='price'>".$service['duree_minutes'] . "min - ".$service['prix_euros'] . "€ </span>");
+        echo("</div>");
+              
+        echo("<div class='card_img'>");
+        echo("        <img src='assets/images/card-coiffe.png' alt='Illustration coupe et coiffage'>");
+        echo("</div>");
+            
+        echo("    <div class='card_description'>");
+        echo("        <p>".$service['description'] . "</p>");
+        echo("</div>");
+        echo("</div>");
 
-            <div class="card_service box_shadow">
-                <div class="card_header">
-                    <h3 class="title">Coupe + Coiffure</h3>
-                    <span class="price">30min - 22€</span>
-                </div>
-                
-                <div class="card_img">
-                    <img src="assets/images/card-coiffe.png" alt="Illustration coupe et coiffage">
-                </div>
-                
-                <div class="card_description">
-                    <p>Lorem Ipsum machin truc bidule description Lorem Ipsum machin truc bidule description Lorem Ipsum machin truc bidule description</p>
-                </div>
-            </div>
-        </div>
-
-
-        <div class = "card_line card_line_bot">
-
-
-            <div class="card_service box_shadow">
-                <div class="card_header">
-                    <h3 class="title">Barbe traditionnelle + Contours  + Soins</h3>
-                    <span class="price">30min - 20€</span>
-                </div>
-                
-                <div class="card_img">
-                    <img src="assets/images/card-barbe.png" alt="Illustration taillage de barbe">
-                </div>
-                
-                <div class="card_description">
-                    <p>Lorem Ipsum machin truc bidule description Lorem Ipsum machin truc bidule description Lorem Ipsum machin truc bidule description</p>
-                </div>
-            </div>
-
-
-            <div class="card_service box_shadow">
-                <div class="card_header">
-                    <h3 class="title">Coupe Etudiant</h3>
-                    <span class="price">30min - 20€</span>
-                </div>
-                
-                <div class="card_img">
-                    <img src="assets/images/card-etudiant.png" alt="Illustration coupe sur un étudiant">
-                </div>
-                
-                <div class="card_description">
-                    <p>Lorem Ipsum machin truc bidule description Lorem Ipsum machin truc bidule description Lorem Ipsum machin truc bidule description</p>
-                </div>
-            </div>
-
+} 
+?>
 
         </div>
-
 
     </div>
+
 
 
     </section>

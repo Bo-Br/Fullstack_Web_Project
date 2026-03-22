@@ -1,3 +1,7 @@
+<?php
+include_once(__DIR__ . "/../../../backend/other/get_db.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,11 +30,3 @@
 </body>
 </html>
 
-<?php
-
-
-
-
-
-
-?>

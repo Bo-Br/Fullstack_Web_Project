@@ -1,3 +1,8 @@
+
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +14,15 @@
 <body>
     <header>
 
-        <?php require_once("./assets/modules/header.php");   ?>
+        <?php require_once("./assets/modules/header.php"); 
 
+            session_start();
+// Test si admni
+            if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] != 1) {
+                header("Location: index.php");
+                exit;
+            }
+            ?>
     </header>
 
 <!-- ####################################################################### DEBUT DE LA SECTION RESERVATIONS #########################################################################-->
@@ -61,35 +73,43 @@
 
 <!-- ####################################################################### DEBUT DE LA SECTION SERVICES #######################################################################-->
 
-    <section id = "services">
-        <h2> Nos prestations </h2>
+<section id = "services">
+    <h2> Nos prestations </h2> <br>
 
+    <div class = "card_content">
+        <div class = "card_line">
 
+<?php
+$sql = "SELECT * FROM services";
+$stmt = $pdo->query($sql);
 
-<!-- DEBUT DU TABLEAU -->
-        <div id = "services_tableau">
+while ($service = $stmt->fetch()) {
 
-<!-- DEBUT DE LIGNE -->
-            <div class = "services_ligne">
+        echo("<div class='card_service box_shadow'>");
+        echo("    <div class='card_header'>");
+        echo("        <h3 class='title'>".$service['nom'] . "</h3>");
+        echo("        <span class='price'>".$service['duree_minutes'] . "min - ".$service['prix_euros'] . "€ </span>");
+        echo("</div>");
+              
+        echo("<div class='card_img'>");
+        echo("        <img src='assets/images/card-coiffe.png' alt='Illustration coupe et coiffage'>");
+        echo("</div>");
+            
+        echo("    <div class='card_description'>");
+        echo("        <p>".$service['description'] . "</p>");
+        echo("</div>");
+        echo("</div>");
 
-                <div class = "service_description">
-                    <h3>Coupe + Taille de Barbe</h3>
-                    <p>Lorem Ipsum machin truc bidule description</p>
-                </div>
-
-                <div class = "service_prix">
-                    <h3>30min - 24€</h3>
-                    <button> x </button>
-                </div>
-                <button> Ajouter Service </button>
-            </div>
-<!-- FIN DE LIGNE -->
+} 
+?>
 
         </div>
-<!-- FIN DU TABLEAU -->
+        
+    </div>
+
+
 
     </section>
-    
 <!-- ####################################################################### FIN DE LA SECTION SERVICES #######################################################################-->
 
 
