@@ -14,7 +14,7 @@
 
     <section class = "main_bck">
         <h1>Login</h1>
-        <form method="POST" action="traitement.php">
+        <form method="POST" action="traitement.php" onsubmit="return validateForm()" >
         <label for="username">Identifiant :</label><br>
         <input type="text" id="username" name="username" required><br><br>
 
@@ -32,5 +32,6 @@
         <?php require_once("./assets/modules/footer.php");   ?> 
 
     </footer>
+    <script src="assets/js/validation_login.js"></script>
 </body>
 </html>
