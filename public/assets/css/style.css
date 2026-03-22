@@ -9,10 +9,26 @@ body {
     font: inherit;
     display: flex;
     flex-direction: column;
+    background-color: #F4F5F7;
 }
 
+
 h1, h2{
+    font-family:  Roboto-Serif;
     color: #FFC300;
+}
+
+h2 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+p{
+    color: white;
+    font-family:  Roboto-Condensed
+;
+}
+#service #info{
+    margin-top: 3rem;;
 }
 
 élément {
@@ -34,7 +50,8 @@ h1, h2{
 
 
 .logo_nav{
-    height: 5rem;
+    height: 4.5rem;
+    margin-left: 1rem;
 }
 #header a{
     color: #FFFFFF;
@@ -79,7 +96,7 @@ footer {
     background-color: #2D2E32;
     height: 5rem;
     gap: 0.3rem;
-    font-family: sans-serif;
+
 }
 
 .footer_link {
@@ -113,75 +130,84 @@ footer {
 /* ---------------------- */
 /* ------- HERO ------- */
 /* -------------------- */
-#hero{
+#hero {
     display: flex;
     width: 100%;
     height: 100vh;
-    background-image: url("../images/bck_image_hero.jpg");
-    background-position: 100%;
-    background-attachment: scroll;  
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/bck_image_hero.jpg");    background-position: center;
     background-size: cover;
-    opacity: 0.70;
-    justify-content: center;
-    align-items: center ;
-}
-
-#hero_contenair{
-    display: flex;
-    width: 100%;
-    height: auto;
-}
-
-.hero_content{
-    display: flex;
-    flex-direction: row;
-    height: fit-content;
-    justify-content: center;
-    align-items: center ;
-    gap: 100px;
-    
-}
-
-
-.logo_hero{
-    width: 30%;
-
-}
-
-.logo_hero img{
-    display: flex;
+    background-attachment: scroll;
     justify-content: center;
     align-items: center;
-    height: fit-content;
-    opacity: 1 ;
 }
 
-.texte_hero{
+.hero_content {
     display: flex;
-    width: 30%;
-    background-color: white;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 20px;
+}
+
+.logo_hero {
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+}
+
+.texte_hero {
+    display: flex;
+    width: 45%;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    align-items: center;
+    gap: 15px;
 }
 
-.texte_hero h1{
-    font-size: 45px;
-    padding: 0px 10px;
+.texte_hero h1 {
+    font-size: 65px; 
+    color: #FFC300; 
+    background-color: rgba(0, 0, 0, 0.2); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    padding: 10px 20px; 
+    border-radius: 15px;
+    margin: 0;
+    line-height: 1.1;
 }
 
-.texte_hero p{
-    font-size: 20px;
-    padding: 0px 10px;
+
+.texte_hero p {
+    font-size: 20px; 
+    color: #FFFFFF; 
+    background-color: rgba(255, 255, 255, 0.05); 
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin: 0;
+    line-height: 1.4;
 }
 
-.texte_hero a{
-    justify-content: center ;
-    opacity: 1 ;
+
+.texte_hero .btn_nav {
+    display: inline-block;
+    font-size: 1.17rem;
+    padding: 1rem 3rem;
+    background-color: #FFC300;
+    color: #2D2E32;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: transform 0.2s ease;
 }
 
-.texte_hero img h1 p a{
-    opacity: 1 !important;
+.texte_hero .btn_nav:hover {
+    transform: scale(1.05);
 }
 
 
@@ -200,6 +226,104 @@ footer {
     justify-content: center;
     margin: 25px;
 }
+
+.card_content{
+    display: flex;
+    flex-direction: column;
+}
+
+.card_line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.card_line_bot{
+    margin-top: 2rem;
+}
+
+.card_service {
+    display: flex;
+    flex-direction: column;
+    width: 320px; 
+    height: 300px;
+    padding: 20px; 
+    background-color: rgba(45, 46, 50, 0.70);
+    background-clip: padding-box;
+    border: 5px solid rgba(255, 196, 70);
+    border-radius: 12px;
+    gap: 1rem;
+    color: #ffffff; 
+}
+
+
+.card_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.card_header .title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 70%;
+}
+
+.card_header .price {
+    color: #FFC300;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+
+.card_img {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.card_img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Description */
+.card_description {
+    padding-top: 5px;
+}
+
+.card_description p {
+    display: flex;
+    margin: 0 0 5px 0;
+    font-size: 0.9rem;
+    color: #A0A0A0;
+    line-height: 1.4;
+    width: fit-content;
+    align-items: center;
+    text-align: center;
+}
+
+.card_description p:last-child {
+    margin-bottom: 0;
+}
+
+
+.box_shadow {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box_shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
 /* ---------------------- */
 /* ------- INFO ------- */
 /* -------------------- */
@@ -218,13 +342,22 @@ footer {
 .info_salon{
     display: flex;
     flex-direction: row;
-    gap: 5rem;
-    margin-left: 18.5rem;
+    justify-content: space-between;
+    margin: 0rem 2rem;
+}
+
+.info_map{
+    display: flex;
+    flex-direction: column;
 }
  
 .info_salon img{
     width: 2rem;
     height: 2rem;
+}
+
+.info_salon p{
+    color: #2D2E32 !important;
 }
 
 #texte_info_adresse{
@@ -241,36 +374,68 @@ footer {
     gap: 0.5rem;
 }
 
+
 .map_heure{
     display: flex;
     flex-direction: row;
    align-items: center;
     justify-content: center;
-    gap: 35rem;
+    gap: 5rem;
     margin: 1rem 5rem;
 }
 
 #map{
+    display: flex;
+    flex-direction: column;
     width: 600px;
     height: 450px;
     border: 15px solid rgba(255, 195, 0, 0.7);
     border-radius: 15px;
 }
-#tableau_horaire{
-    width: fit-content;
+
+.horaires_card {
+    background-color: rgba(255, 195, 0, 0.7);
+    color: #2D3748;
+    width: 200px;
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 2rem;
 }
 
-#horaires_tableau{
-    padding: 0px 1rem;
-    width: fit-content;
-    height: fit-content;
-    flex: 1;
-    background-color: rgba(255, 195, 0, 0.7);
-    border: 15px solid rgba(250, 198, 28, 0);
-    border-radius: 15px;
-    align-items: center;
-    justify-content: center;
+.horaires_titre {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #2D3748;
 }
+
+.horaires_liste {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.horaires_ligne {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    font-size: 1rem;
+}
+
+
+.horaires_ligne .jour {
+    font-weight: 700;
+    color: #2D3748;
+}
+
+.horaires_ligne .heures {
+    font-weight: 500;
+    color: #2D3748;
+}
+
 /* ---------------------- */
 /* ------- MENTIONS ------- */
 /* -------------------- */
@@ -288,9 +453,9 @@ footer {
 .main_page {
     padding: 2rem;
     width: fit-content;
-    background-color: #2D2E32;
+    background-color: rgba(45, 46, 50, 0.70);;
     background-clip: padding-box;
-    border: 15px solid rgba(255, 195, 0, 0.7);
+    border: 15px solid rgba(255, 196, 70);
     border-radius: 15px;
     color: white;
 }    
