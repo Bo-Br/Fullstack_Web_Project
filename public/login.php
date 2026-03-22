@@ -14,17 +14,19 @@
     </header>
 
     <section class = "main_bck">
-        <div class = "main_page" ></div>
-        <h1>Login</h1>
-        <form method="POST" action="traitement.php">
-        <label for="username">Identifiant :</label><br>
-        <input type="text" id="username" name="username" required><br><br>
+        <div class = "login main_page" >
+            <h1>Login</h1>
+            <form method="POST" action="traitement.php">
+                <label for="username">Identifiant :</label><br>
+                <input type="text" id="username" name="username" required><br><br>
 
-        <label for="password">Mot de passe :</label><br>
-        <input type="password" id="password" name="password" required><br><br>
-
-        <button type="submit">Se connecter</button>
-        </form>
+                <label for="password">Mot de passe :</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+                <div class = "btn_login">
+                    <button type="submit" class = "btn_submit">Se connecter</button>
+                </div>
+            </form>
+        </div>
     </section>
 
 

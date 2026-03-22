@@ -15,7 +15,7 @@
         <div class= "nav_link">
             <a href="index.php"> Accueil </a>
             <a href="reserver.php"><button class = "btn_nav">Rendez-Vous</button></a>
-            <a href="login.php"><button class = "btn_nav"> <img src="assets/images/logo_login.png" alt="logo d'identification"></button></a>
+            <a href="login.php"><button class = "btn_nav"> <img class = "icon_btn" src="assets/images/logo_login.png" alt="logo d'identification"></button></a>
         </div>
 
     </div>

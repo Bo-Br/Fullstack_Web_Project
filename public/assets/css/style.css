@@ -3,76 +3,69 @@
 /* -------------------- */
 
 body {
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  font: inherit;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    display: flex;
+    flex-direction: column;
 }
 
-h1{
-
+h1, h2{
+    color: #FFC300;
 }
 
+élément {
+    margin-top: 0px;
+}
 
 /* --------- */
 /* HEADER */
 /* ----------- */
 
 
-#header {
+ #header{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     background-color: #2D2E32;
     height: 5rem;
-    padding: 0 2rem; /
-    font-family: sans-serif;
-}
-
-.logo_nav {
-    height: 3.5rem;
-    display: block;
-}
-
-.nav_links {
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
 }
 
-.nav-item {
-    color: #FFC300;
+
+.logo_nav{
+    height: 5rem;
+}
+#header a{
+    color: #FFFFFF;
+    margin-right: 2rem;
     text-decoration: none;
-    font-weight: 600;
 }
 
-.btn_nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.nav_link{
+    gap: 5px;
+}
+
+.btn_nav{
     background-color: #FFC300;
     color: #2D2E32;
-    text-decoration: none;
+    padding: 10px 10px;
+    border-style: none;
     border-radius: 7px;
-    font-weight: bold;
-    height: 45px; 
-    box-sizing: border-box;
+    width: fit-content;
+    align-items: center;
 }
 
-.text-btn {
-    padding: 0 1.2rem;
+.bnt_nav a{
+    margin-top: 0px;
 }
 
-.icon-btn {
-    width: 45px;
-    padding: 0;
-}
-
-.icon-btn img {
-    display: block;
-    height: 24px;
-    width: 24px;
-}
+.btn_nav img{
+    display: flex;
+    height: 20px;
+    padding: 0px 0px !important;
+} 
 
 /* ---------------------- */
 /* ------ FOOTER ------- */
@@ -114,6 +107,12 @@ footer {
 /* ---------------------- */
 /* ------- INDEX ------- */
 /* -------------------- */
+
+
+
+/* ---------------------- */
+/* ------- HERO ------- */
+/* -------------------- */
 #hero{
     display: flex;
     width: 100%;
@@ -123,12 +122,14 @@ footer {
     background-attachment: scroll;  
     background-size: cover;
     opacity: 0.70;
-    }
+    justify-content: center;
+    align-items: center ;
+}
 
 #hero_contenair{
     display: flex;
     width: 100%;
-    align-items: center;
+    height: auto;
 }
 
 .hero_content{
@@ -136,6 +137,7 @@ footer {
     flex-direction: row;
     height: fit-content;
     justify-content: center;
+    align-items: center ;
     gap: 100px;
     
 }
@@ -151,6 +153,7 @@ footer {
     justify-content: center;
     align-items: center;
     height: fit-content;
+    opacity: 1 ;
 }
 
 .texte_hero{
@@ -173,47 +176,239 @@ footer {
 }
 
 .texte_hero a{
-    background-color: red;
+    justify-content: center ;
+    opacity: 1 ;
+}
+
+.texte_hero img h1 p a{
+    opacity: 1 !important;
 }
 
 
+/* ---------------------- */
+/* ------- SERVICE ------- */
+/* -------------------- */
+
+#services{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#services h2{
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}
+/* ---------------------- */
+/* ------- INFO ------- */
+/* -------------------- */
+#info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+#info h2{
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}
+
+.info_salon{
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    margin-left: 18.5rem;
+}
+ 
+.info_salon img{
+    width: 2rem;
+    height: 2rem;
+}
+
+#texte_info_adresse{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#texte_info_telephone{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.map_heure{
+    display: flex;
+    flex-direction: row;
+   align-items: center;
+    justify-content: center;
+    gap: 35rem;
+    margin: 1rem 5rem;
+}
+
+#map{
+    width: 600px;
+    height: 450px;
+    border: 15px solid rgba(255, 195, 0, 0.7);
+    border-radius: 15px;
+}
+#tableau_horaire{
+    width: fit-content;
+}
+
+#horaires_tableau{
+    padding: 0px 1rem;
+    width: fit-content;
+    height: fit-content;
+    flex: 1;
+    background-color: rgba(255, 195, 0, 0.7);
+    border: 15px solid rgba(250, 198, 28, 0);
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+}
 /* ---------------------- */
 /* ------- MENTIONS ------- */
 /* -------------------- */
 
 
 .main_bck{
-
-    height: 850px;
-    background-color: aqua;
-    
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 
+.main_page {
+    padding: 2rem;
+    width: fit-content;
+    background-color: #2D2E32;
+    background-clip: padding-box;
+    border: 15px solid rgba(255, 195, 0, 0.7);
+    border-radius: 15px;
+    color: white;
+}    
 
-.main_bck {
-  width: 100%;
-  flex: 1;
-  background-color: rgba(255, 195, 0, 0.7);
-}
-
-.main_bck p{
+.main_page p{
     width: 50%;
     text-align: center;
     justify-content: center;
     width: fit-content;
     margin: 0px;
+    color: white;
 }
 
-.main_page{
-   
+.main_page h1{
+   display: flex;
+   justify-content: center;
 }
 
+.main_page a{
+    color: rgb(255, 195, 0) ;
+}
 
 /* ---------------------- */
 /* ------- RESERVER ------- */
 /* -------------------- */
+.main_reservation{
+    display: flex;
+    flex-direction: column;
+}
+
+.main_reservation select{
+    height: 1.3rem;
+    width: 8rem;
+    border-style: none;
+}
+
+
+
+.reservation_line{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-around;
+}
+
+.reservation_line_service{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: flex-start;
+    margin-left: 0px;
+}
+
+.reservation_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    margin-top: 1rem;
+}
+.reservation_item select{
+    margin-right: 5px;
+}
+
+.reservation__service{
+   display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-between; 
+}
+
+.date_horaire{
+    display: flex;
+    justify-content: space-between;
+}
+
+.reservation__horaire{
+    display: flex;
+    align-items: center;  
+}
 
 input {
     border-style: none;
+    border-radius: 10px;
+    height: 1.3rem !important;
+    width: 15rem !important;
+}
+
+.btn_submit{
+    background-color: #FFC300;
+    padding: 10px 10px;
+    border-style: none;
+    border-radius: 7px;
+    width: fit-content;
+    align-items: center;
+}
+
+/* ---------------------- */
+/* ------- LOGIN ------- */
+/* -------------------- */
+
+label{
+    color: white;
+}
+
+form{
+    width: fit-content;
+}
+
+.login input{
+    height: 1.3rem !important;
+    width: 15rem !important;
+    
+}
+.btn_login{
+    display: flex;
+    justify-content: center;
+}
+
+section{
+    width: fit-content;
 }
