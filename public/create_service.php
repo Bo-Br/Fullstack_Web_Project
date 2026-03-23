@@ -21,7 +21,7 @@
 
         <div class = "main_page main_reservation">
 
-            <h1>Réserver</h1>
+            <h1> Créer un service </h1>
             <form method="POST" action="">
                 <div class = "reservation_line">
                     <div class = "reservation_item">
@@ -46,10 +46,12 @@
                         <input type="number" name="price" placeholder="XX" required> <br>
                     </div>
                 
-                    
+
 
                 <div class = "reservation_line">
+                    <div class = "btn_login"> 
                     <button type="submit" name="submit" class="btn_submit">Ajouter Service</button>
+                    </div>
                 </div>    
         
         
