@@ -1,26 +1,38 @@
-function validateForm() {
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
 
-        const username = document.getElementById("username");
-        const password = document.getElementById("password");
+    form.addEventListener("submit", (e) => {
+        let errors = [];
 
-        if (username.value.length < 3) {
-            username.style.border = "2px solid red";
-            username.setCustomValidity("Entrez un username de plus de 3 elements");
-        }else{
-            username.style.border = "2px solid green";
-            username.setCustomValidity(""); 
-            
-          };
+        // trim значения
+        const usernameValue = username.value.trim();
+        const passwordValue = password.value.trim();
 
-        if (password.value.length < 12) {
-            password.style.border = "2px solid red";
-            password.setCustomValidity("Entrez un mdp de plus de 12 elements");
-            
-        }else{
-            password.style.border = "2px solid green";
-            password.setCustomValidity("");
-            
-          };
-        
-          return true;
-};
+        // Проверка username (email)
+        if (usernameValue === "") {
+            errors.push("L'identifiant est vide.");
+        } else if (!validateEmail(usernameValue)) {
+            errors.push("Email invalide.");
+        }
+
+        // Проверка password
+        if (passwordValue === "") {
+            errors.push("Mot de passe vide.");
+        } else if (passwordValue.length < 5) {
+            errors.push("Mot de passe trop court (min 6 caractères).");
+        }
+
+        // Если есть ошибки — блокируем отправку
+        if (errors.length > 0) {
+            e.preventDefault();
+            alert(errors.join("\n"));
+        }
+    });
+
+    function validateEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+});

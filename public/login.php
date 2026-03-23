@@ -2,16 +2,6 @@
 <?php
 session_start();
 
-
-            
-
-
-/*
-            $_SESSION['user_id'] = '';
-            $_SESSION['email'] = '';
-            $_SESSION['is_admin'] = '';
-*/
-
 ?>
 
 <!DOCTYPE html>

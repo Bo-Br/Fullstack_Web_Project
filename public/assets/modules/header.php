@@ -24,6 +24,20 @@ include_once(__DIR__ . "/../../../backend/other/get_db.php");
             <a href="index.php" class="nav_item">Accueil</a>
             
             <a href="reserver.php" class="btn_nav">Rendez-Vous</a>
+
+            <?php
+
+
+            
+            // Test si admni
+            if (isset($_SESSION['user_id']) && $_SESSION['is_admin'] = 1) {
+                echo("<a href= '../backend/other/logout.php' class='btn_nav'> Déconnexion </a>");
+            };
+            
+            
+            
+            ?>
+
             <a href="login.php" class="btn_nav btn_icon">
                 <img class="icon_btn" src="assets/images/logo_login.png" alt="Se connecter">
             </a>
