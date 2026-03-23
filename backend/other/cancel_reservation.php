@@ -1,5 +1,6 @@
 <?php 
-    include 'get_db.php';
+    include_once('get_db.php');
+include_once("is_admin_test.php");
 
 // on récupère l'id du livre à supprimer à partir de l'URL
 $id = $_GET['id'];

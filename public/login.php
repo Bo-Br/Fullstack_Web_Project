@@ -1,7 +1,10 @@
 
 <?php
-
 session_start();
+
+
+            
+
 
 /*
             $_SESSION['user_id'] = '';
@@ -10,6 +13,7 @@ session_start();
 */
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +25,12 @@ session_start();
 <body>
     <header>
 
-        <?php require_once("./assets/modules/header.php");   ?>
+        <?php require_once("./assets/modules/header.php");  
+        // Test si admni
+            if (isset($_SESSION['user_id']) && $_SESSION['is_admin'] = 1) {
+                header("Location: dashboard.php");
+                exit;
+            }; ?>
 
     </header>
 

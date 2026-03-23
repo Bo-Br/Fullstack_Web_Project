@@ -62,6 +62,7 @@ while ($reservation = $stmt->fetch()) {
 ?>
 
 
+
 <!-- FIN DE LIGNE -->
 
         </div>
@@ -103,11 +104,27 @@ while ($service = $stmt->fetch()) {
             
         echo("    <div class='card_description'>");
         echo("        <p>".$service['description'] . "</p>");
+        echo("<a href='../backend/other/delete_service.php?id=" . $service['id_service'] . "'>");
+                echo("<button> Sup </button>");
+                echo("</a>");
         echo("</div>");
         echo("</div>");
 
 } 
 ?>
+<a href="create_service.php">
+<button>
+<div class="card_service box_shadow">
+    <div class="card_header">
+        <h3 class="title"> AJOUTER UN SERVICE </h3>
+    
+    </div>
+</div>
+</button>
+</a>
+
+
+
 
         </div>
         
