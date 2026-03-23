@@ -1,28 +1,22 @@
 
-<?php
-session_start();
 
+<?php include_once(__DIR__ . "/../backend/other/is_admin_test.php");
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Accueil </title>
+    <title> dashboard </title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
 
-        <?php require_once("./assets/modules/header.php"); 
+        <?php require_once("./assets/modules/header.php"); ?>
 
-            
-// Test si admni
-            if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] != 1) {
-                header("Location: index.php");
-                exit;
-            }
-            ?>
     </header>
 
 <!-- ####################################################################### DEBUT DE LA SECTION RESERVATIONS #########################################################################-->
