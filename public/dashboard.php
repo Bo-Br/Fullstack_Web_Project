@@ -16,7 +16,7 @@ session_start();
 
         <?php require_once("./assets/modules/header.php"); 
 
-            session_start();
+            
 // Test si admni
             if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] != 1) {
                 header("Location: index.php");
@@ -35,27 +35,39 @@ session_start();
         <div id = "reservations_tableau_dashboard">
 
 <!-- DEBUT DE LIGNE -->
-            <div class = "reservations_ligne_dashboard">
+<?php
+$sql = "SELECT * FROM reservations";
+$stmt = $pdo->query($sql);
 
-                <div class = "reservation_nom_dashboard">
-                    <h3>Michel</h3>
-                </div>
+while ($reservation = $stmt->fetch()) {
 
-                <div class = "reservation_date_dashboard">
-                    <h3>20/03/2026 | 14:30</h3>
-                </div>
+            echo("<div class = 'reservations_ligne_dashboard'>");
+            echo("<div class = 'reservation_nom_dashboard'>");
+            echo("<h3>" . $reservation['nom_client'] . "</h3>");
+            echo("</div>");
+            echo("<div class = 'reservation_date_dashboard'>");
+            echo("<h3>" . $reservation['date_rdv'] . " | " . $reservation['heure_rdv'] . "</h3>");
+            echo("</div>");
+            echo("<div class = 'reservation_status_dashboard'>");
+            echo("<h3>" . $reservation['statut'] . "</h3>");
+            echo("</div>");
+                echo("<div class='action'>");
 
-                <div class = "reservation_status_dashboard">
-                    <h3>en_attente</h3>
-                </div>
+                echo("<a href='../backend/other/approve_reservation.php?id=" . $reservation['id_reservation'] . "'>");
+                echo("<button> Y </button>");
+                echo("</a>");
+
+                echo("<a href='../backend/other/cancel_reservation.php?id=" . $reservation['id_reservation'] . "'>");
+                echo("<button> N </button>");
+                echo("</a>");
+
+                echo("</div>");
+            echo("</div>");
+
+};
+?>
 
 
-                <div class = "action">
-                    <button> Y </button>
-                    <button> N </button>
-                </div>
-
-            </div>
 <!-- FIN DE LIGNE -->
 
         </div>
