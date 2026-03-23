@@ -51,11 +51,11 @@ while ($reservation = $stmt->fetch()) {
                 echo("<div class='action'>");
 
                 echo("<a href='../backend/other/approve_reservation.php?id=" . $reservation['id_reservation'] . "'>");
-                echo("<button> Y </button>");
+                echo("<button class = 'btn_valider'> Y </button>");
                 echo("</a>");
 
                 echo("<a href='../backend/other/cancel_reservation.php?id=" . $reservation['id_reservation'] . "'>");
-                echo("<button> N </button>");
+                echo("<button class = 'btn_suprimer'> N </button>");
                 echo("</a>");
 
                 echo("</div>");
@@ -108,12 +108,15 @@ while ($service = $stmt->fetch()) {
         echo("    <div class='card_description'>");
         echo("        <p>".$service['description'] . "</p>");
         echo("<a href='../backend/other/delete_service.php?id=" . $service['id_service'] . "'>");
-                echo("<button> Sup </button>");
+                echo("<button class = 'btn_suprimer'> Sup </button>");
                 echo("</a>");
         echo("</div>");
         echo("</div>");
 
 } 
+
+
+
 ?>
 <a href="create_service.php">
 <button>
