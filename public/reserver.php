@@ -44,7 +44,20 @@ session_start();
                 <div class = "date_horaire">
                     <div class = "reservation_item">
                         <p>Date:</p>
-                        <input type="date" name="date" required>
+
+                        <?php
+                        $aujourdhui = date('Y-m-d');
+                        ?>
+
+                        <input type="date" name="date" 
+                        min= 
+                        <?php echo $aujourdhui; ?> 
+                        value =  
+                        <?php echo $aujourdhui; ?> 
+                        required>
+
+
+
                     </div>
                     <div class = "reservation_item ">
                         <p> <br></p>
