@@ -41,7 +41,6 @@ session_start();
     </section>
 
 <?php
-var_dump($_SESSION);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['username']); // your form uses "username" field

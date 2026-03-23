@@ -11,6 +11,7 @@ include_once(__DIR__ . "/../../../backend/other/get_db.php");
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
     <title>Document</title>
 </head>
 <body>
@@ -21,9 +22,9 @@ include_once(__DIR__ . "/../../../backend/other/get_db.php");
         </a>
 
         <nav class="nav_link">
-            <a href="index.php" class="nav_item">Accueil</a>
+            <a href="index.php" class="nav_item"> Accueil </a>
             
-            <a href="reserver.php" class="btn_nav">Rendez-Vous</a>
+            <a href="reserver.php" class="btn_nav"> Reserver </a>
 
 
             <?php
