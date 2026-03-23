@@ -276,7 +276,7 @@ footer {
     width: 320px; 
     height: 300px;
     padding: 20px; 
-    background-color: rgba(45, 46, 50, 0.70);
+    background-color: rgba(45, 46, 50, 0.50);
     background-clip: padding-box;
     border: 5px solid rgba(255, 196, 70);
     border-radius: 12px;
@@ -328,7 +328,7 @@ footer {
     display: flex;
     margin: 0 0 5px 0;
     font-size: 0.9rem;
-    color: #A0A0A0;
+    color: #e9e9e9;
     line-height: 1.4;
     width: fit-content;
     align-items: center;
@@ -495,7 +495,7 @@ footer {
     padding: 2rem;
     width: fit-content;
     max-width: 100%;
-    background-color: rgba(45, 46, 50, 0.70);
+    background-color: rgba(45, 46, 50, 0.50);
     background-clip: padding-box;
     border: 15px solid rgba(255, 196, 70);
     border-radius: 15px;
@@ -635,7 +635,65 @@ section {
     justify-content: center;
 }
 
+/* ---------------------- */
+/* ------- DASHBOARD ------- */
+/* -------------------- */
 
+#reservations_dasboard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#reservations_tableau_dashboard{
+    width: fit-content;
+    min-width: fit-content;
+    height: auto;
+    background-color: rgba(45, 46, 50, 0.50);
+    background-clip: padding-box;
+    border: 5px solid rgba(255, 196, 70, 0.70);
+    border-radius: 15px;
+    padding: 0rem 1rem;
+    
+}
+
+.reservations_ligne_dashboard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 5rem;
+    
+}
+
+.reservation_date_dashboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btn_valider{
+    background-color: green;
+    border-style: none;
+    border-radius: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+}
+
+.btn_suprimer{
+    background-color: red;
+    border-style: none;
+    border-radius: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+/* div, section{
+    border : 2px solid green;
+} */
 /* -------------------------------------- */
 /* ---- MEDIA QUERIES (RESPONSIVE) ------ */
 /* -------------------------------------- */
