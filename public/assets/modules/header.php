@@ -25,22 +25,22 @@ include_once(__DIR__ . "/../../../backend/other/get_db.php");
             
             <a href="reserver.php" class="btn_nav">Rendez-Vous</a>
 
+
             <?php
+            if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] == 0) {
 
+                echo("<a href='login.php' class='btn_nav btn_icon'>");
+                echo("<img class='icon_btn' src='assets/images/logo_login.png' alt='Se connecter'>");
+                echo("</a>");
 
-            
-            // Test si admni
-            if (isset($_SESSION['user_id']) && $_SESSION['is_admin'] = 1) {
+            }else{
                 echo("<a href= '../backend/other/logout.php' class='btn_nav'> Déconnexion </a>");
+                echo("<a href= 'dashboard.php' class='btn_nav'> Dashboard </a>");
             };
-            
-            
-            
             ?>
 
-            <a href="login.php" class="btn_nav btn_icon">
-                <img class="icon_btn" src="assets/images/logo_login.png" alt="Se connecter">
-            </a>
+                
+
         </nav>
     </header>
 
