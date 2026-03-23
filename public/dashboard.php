@@ -1,5 +1,5 @@
 
-
+<!-- test si admin -->
 <?php include_once(__DIR__ . "/../backend/other/is_admin_test.php");
 ?>
 

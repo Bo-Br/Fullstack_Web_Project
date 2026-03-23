@@ -3,7 +3,7 @@
 
 session_start();
 
-/* SESSION ERASE
+/*
             $_SESSION['user_id'] = '';
             $_SESSION['email'] = '';
             $_SESSION['is_admin'] = '';
