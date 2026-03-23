@@ -368,11 +368,33 @@ footer {
 
 .info_salon {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     margin: 0rem 2rem;
     flex-wrap: wrap;
     gap: 2rem;
+}
+
+.info_texte{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.texte_info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.texte_info img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.texte_info p {
+    color: #2D2E32 !important;
+    margin-left: 1rem;
 }
 
 .info_map {
@@ -380,14 +402,6 @@ footer {
     flex-direction: column;
 }
 
-.info_salon img {
-    width: 2rem;
-    height: 2rem;
-}
-
-.info_salon p {
-    color: #2D2E32 !important;
-}
 
 #texte_info_adresse, #texte_info_telephone {
     display: flex;
@@ -405,24 +419,27 @@ footer {
     margin: 1rem 5rem;
 }
 
-#map {
+#map iframe{
     display: flex;
     flex-direction: column;
     width: 600px;
     height: 450px;
-    border: 15px solid rgba(255, 195, 0, 0.7);
     border-radius: 15px;
     max-width: 100%; 
     box-sizing: border-box;
+}
+#map{
+    border: 15px solid rgba(255, 195, 0, 0.7);
+    border-radius: 15px;
 }
 
 .horaires_card {
     background-color: rgba(255, 195, 0, 0.7);
     color: #2D3748;
-    width: 200px;
+    width: 250px;
     padding: 30px;
     border-radius: 15px;
-    margin-top: 2rem;
+    margin-top: 5rem;
     max-width: 100%;
     box-sizing: border-box;
 }
@@ -640,7 +657,7 @@ section {
         margin: 1rem;
     }
 
-    #map {
+    #map iframe{
         height: 350px;
     }
 }
@@ -688,7 +705,7 @@ section {
         text-align: left;
     }
 
-    #map {
+    #map iframe {
         width: 100%;
         height: 300px;
         border-width: 8px;

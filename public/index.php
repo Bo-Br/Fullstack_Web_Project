@@ -146,18 +146,17 @@
        
                 
                 <div class ="map_heure">
-                    <div class = "info_map"> 
-                        <div class = "info_salon">
-                            <div id = "texte_info_adresse">
+                    <div class = "info_salon">
+                        <div class = "info_texte">
+                            <div class = "texte_info">
                                 <img src="assets/images/icn_loc.png" alt="">
                                 <p> 3 Avenue du Barbier 12345 (Atelier) </p>
-                            </div id = "map">
-                            <div id = "texte_info_telephone">
+                            </div>
+                            <div class = "texte_info">
                                 <img src="assets/images/icn_tel.png" alt="">
                                 <p>06.07.08.09.10</p>
                             </div>
-                        </div>
-
+                        </div> 
                         <div id = "map">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.4556298684247!2d4.91467997684396!3d45.76205831351497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4c123ff192f4f%3A0xcfe8fb5781412a1b!2sAvenue%20du%20Barbier!5e0!3m2!1sfr!2sfr!4v1774105528196!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
