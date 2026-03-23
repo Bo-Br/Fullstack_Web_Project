@@ -21,7 +21,7 @@
             <div class="texte_hero">
                 <h1>Un salon à l'ambiance Cozy</h1>
                 <p>Venez découvrir des services de coiffure et de barbe de qualité qui allient savoir-faire traditionnel et modernité. En plus de ses différents services de soins, le salon vous offre l'accès à des paires de chaussures rares et exclusives grâce à son Sneakers shop.</p>
-                <a class="btn_nav" href="reserver.php">Rendez-Vous</a>
+                <a class="btn_nav" href="reserver.php">Prenez rendez-vous</a>
             </div>
         </div>
     </section>

@@ -13,9 +13,8 @@ body {
     background-color: #F4F5F7;
 }
 
-
-h1, h2{
-    font-family:  Roboto-Serif;
+h1, h2 {
+    font-family: Roboto-Serif;
     color: #FFC300;
 }
 
@@ -23,24 +22,19 @@ h2 {
     font-size: 3rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
-p{
+
+p {
     color: white;
-    font-family:  Roboto-Condensed
-;
-}
-#service #info{
-    margin-top: 3rem;;
+    font-family: Roboto-Condensed;
 }
 
-élément {
-    margin-top: 0px;
+#service #info {
+    margin-top: 3rem;
 }
 
 /* --------- */
 /* HEADER */
 /* ----------- */
-
-
 
 #header {
     display: flex;
@@ -68,13 +62,12 @@ p{
     width: auto;
 }
 
-
 .nav_link {
     display: flex;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
-
 
 .nav_item {
     color: #FFFFFF;
@@ -87,7 +80,6 @@ p{
 .nav_item:hover {
     color: #FFC300;
 }
-
 
 .btn_nav {
     display: flex;
@@ -105,7 +97,6 @@ p{
 .btn_nav:hover {
     transform: scale(1.05);
 }
-
 
 .btn_icon {
     padding: 10px;
@@ -127,15 +118,19 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: #2D2E32;
-    height: 5rem;
+    height: auto; 
+    min-height: 5rem;
     gap: 0.3rem;
-
+    padding: 1rem 0;
+    text-align: center;
 }
 
 .footer_link {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 0.8rem;
 }
 
@@ -155,23 +150,21 @@ footer {
 }
 
 /* ---------------------- */
-/* ------- INDEX ------- */
-/* -------------------- */
-
-
-
-/* ---------------------- */
 /* ------- HERO ------- */
 /* -------------------- */
+
 #hero {
     display: flex;
     width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/bck_image_hero.jpg");    background-position: center;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/bck_image_hero.jpg");
+    background-position: center;
     background-size: cover;
     background-attachment: scroll;
     justify-content: center;
     align-items: center;
+    padding: 5rem 0;
+    box-sizing: border-box;
 }
 
 .hero_content {
@@ -183,6 +176,7 @@ footer {
     width: 100%;
     max-width: 1300px;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .logo_hero {
@@ -212,9 +206,8 @@ footer {
     line-height: 1.1;
 }
 
-
 .texte_hero p {
-    font-size: 20px; 
+    font-size: 22px; 
     color: #FFFFFF; 
     background-color: rgba(255, 255, 255, 0.05); 
     text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
@@ -224,7 +217,6 @@ footer {
     margin: 0;
     line-height: 1.4;
 }
-
 
 .texte_hero .btn_nav {
     display: inline-block;
@@ -243,37 +235,38 @@ footer {
     transform: scale(1.05);
 }
 
-
 /* ---------------------- */
 /* ------- SERVICE ------- */
 /* -------------------- */
 
-#services{
+#services {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-#services h2{
+#services h2 {
     display: flex;
     justify-content: center;
     margin: 25px;
+    text-align: center;
 }
 
-.card_content{
+.card_content {
     display: flex;
     flex-direction: column;
 }
 
-.card_line{
+.card_line {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-
+    flex-wrap: wrap; 
+    padding: 0 1rem;
 }
 
-.card_line_bot{
+.card_line_bot {
     margin-top: 2rem;
 }
 
@@ -289,8 +282,9 @@ footer {
     border-radius: 12px;
     gap: 1rem;
     color: #ffffff; 
+    box-sizing: border-box;
+    max-width: 100%;
 }
-
 
 .card_header {
     display: flex;
@@ -310,7 +304,6 @@ footer {
     font-weight: bold;
     font-size: 0.95rem;
 }
-
 
 .card_img {
     width: 100%;
@@ -346,7 +339,6 @@ footer {
     margin-bottom: 0;
 }
 
-
 .box_shadow {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -360,70 +352,68 @@ footer {
 /* ---------------------- */
 /* ------- INFO ------- */
 /* -------------------- */
-#info{
+
+#info {
     display: flex;
     flex-direction: column;
     width: 100%;
-    
 }
-#info h2{
+
+#info h2 {
     display: flex;
     justify-content: center;
     margin: 25px;
+    text-align: center;
 }
 
-.info_salon{
+.info_salon {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0rem 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
-.info_map{
+.info_map {
     display: flex;
     flex-direction: column;
 }
- 
-.info_salon img{
+
+.info_salon img {
     width: 2rem;
     height: 2rem;
 }
 
-.info_salon p{
+.info_salon p {
     color: #2D2E32 !important;
 }
 
-#texte_info_adresse{
+#texte_info_adresse, #texte_info_telephone {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
 }
 
-#texte_info_telephone{
+.map_heure {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 0.5rem;
-}
-
-
-.map_heure{
-    display: flex;
-    flex-direction: row;
-   align-items: center;
     justify-content: center;
     gap: 5rem;
     margin: 1rem 5rem;
 }
 
-#map{
+#map {
     display: flex;
     flex-direction: column;
     width: 600px;
     height: 450px;
     border: 15px solid rgba(255, 195, 0, 0.7);
     border-radius: 15px;
+    max-width: 100%; 
+    box-sizing: border-box;
 }
 
 .horaires_card {
@@ -433,6 +423,8 @@ footer {
     padding: 30px;
     border-radius: 15px;
     margin-top: 2rem;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .horaires_titre {
@@ -458,7 +450,6 @@ footer {
     font-size: 1rem;
 }
 
-
 .horaires_ligne .jour {
     font-weight: 700;
     color: #2D3748;
@@ -473,98 +464,106 @@ footer {
 /* ------- MENTIONS ------- */
 /* -------------------- */
 
-
-.main_bck{
+.main_bck {
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
 }
-
 
 .main_page {
     padding: 2rem;
     width: fit-content;
-    background-color: rgba(45, 46, 50, 0.70);;
+    max-width: 100%;
+    background-color: rgba(45, 46, 50, 0.70);
     background-clip: padding-box;
     border: 15px solid rgba(255, 196, 70);
     border-radius: 15px;
     color: white;
-}    
+    box-sizing: border-box;
+}
 
-.main_page p{
-    width: 50%;
+.main_page p {
     text-align: center;
     justify-content: center;
-    width: fit-content;
+    width: 100%;
     margin: 0px;
     color: white;
 }
 
-.main_page h1{
-   display: flex;
-   justify-content: center;
+.main_page h1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
-.main_page a{
-    color: rgb(255, 195, 0) ;
+.main_page a {
+    color: rgb(255, 195, 0);
 }
 
 /* ---------------------- */
 /* ------- RESERVER ------- */
 /* -------------------- */
-.main_reservation{
+
+.main_reservation {
     display: flex;
     flex-direction: column;
 }
 
-.main_reservation select{
+.main_reservation select {
     height: 1.3rem;
     width: 8rem;
     border-style: none;
+    max-width: 100%;
 }
 
-
-
-.reservation_line{
+.reservation_line {
     display: flex;
     flex-direction: row;
     gap: 1rem;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.reservation_line_service{
+.reservation_line_service {
     display: flex;
     flex-direction: row;
     gap: 1rem;
     justify-content: flex-start;
     margin-left: 0px;
+    flex-wrap: wrap;
 }
 
-.reservation_item{
+.reservation_item {
     display: flex;
     flex-direction: column;
     align-items: center;  
     margin-top: 1rem;
 }
-.reservation_item select{
+
+.reservation_item select {
     margin-right: 5px;
 }
 
-.reservation__service{
-   display: flex;
+.reservation__service {
+    display: flex;
     flex-direction: row;
     gap: 1rem;
     justify-content: space-between; 
+    flex-wrap: wrap;
 }
 
-.date_horaire{
+.date_horaire {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.reservation__horaire{
+.reservation__horaire {
     display: flex;
     align-items: center;  
 }
@@ -574,39 +573,131 @@ input {
     border-radius: 10px;
     height: 1.3rem !important;
     width: 15rem !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
 }
 
-.btn_submit{
+.btn_submit {
     background-color: #FFC300;
     padding: 10px 10px;
     border-style: none;
     border-radius: 7px;
     width: fit-content;
     align-items: center;
+    margin-top: 1rem;
 }
 
 /* ---------------------- */
 /* ------- LOGIN ------- */
 /* -------------------- */
 
-label{
+label {
     color: white;
 }
 
-form{
-    width: fit-content;
+form {
+    width: 100%;
+    max-width: 400px;
 }
 
-.login input{
+.login input {
     height: 1.3rem !important;
     width: 15rem !important;
-    
+    max-width: 100% !important;
 }
-.btn_login{
+
+.btn_login {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+section {
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
-section{
-    width: fit-content;
+
+/* -------------------------------------- */
+/* ---- MEDIA QUERIES (RESPONSIVE) ------ */
+/* -------------------------------------- */
+
+@media screen and (max-width: 992px) {
+
+    .hero_content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .logo_hero, .texte_hero {
+        width: 100%;
+    }
+
+    .map_heure {
+        flex-direction: column;
+        gap: 2rem;
+        margin: 1rem;
+    }
+
+    #map {
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #header {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+        position: static;
+    }
+
+    body {
+        padding-top: 0;
+    }
+
+    .nav_link {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+
+    @media screen and (max-width: 768px) {
+   
+    .info_salon {
+        flex-direction: row; 
+        justify-content: space-around;
+        align-items: flex-start;
+        margin: 0 0.5rem; 
+        gap: 0.5rem;
+    }
+    
+
+    .info_salon img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+
+    #texte_info_adresse p, 
+    #texte_info_telephone p {
+        font-size: 0.85rem; 
+        margin: 0;
+        text-align: left;
+    }
+
+    #map {
+        width: 100%;
+        height: 300px;
+        border-width: 8px;
+        margin-top: 1rem;
+    }
+}
+    
+    .main_page {
+        padding: 1rem;
+        border-width: 5px;
+    }
 }
