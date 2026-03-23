@@ -26,6 +26,7 @@ h2 {
 p {
     color: white;
     font-family: Roboto-Condensed;
+    font-size: 20px;
 }
 
 #service #info {
@@ -319,7 +320,7 @@ footer {
     object-fit: cover;
 }
 
-/* Description */
+
 .card_description {
     padding-top: 5px;
 }
@@ -348,6 +349,57 @@ footer {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
+
+/* ---------------------- */
+/* ------- CREATION ------- */
+/* -------------------- */
+.creation {
+    margin: 5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery_contenair{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    background-color: rgba(45, 46, 50, 0.50);
+    background-clip: padding-box;
+    border: 5px solid rgba(255, 196, 70, 0.50);
+    border-radius: 12px;
+    padding: 1rem;
+
+}
+
+.gallery {
+    display: flex;
+    height: 300px;
+    width: 300px;
+    gap: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0; 
+    animation: m 20s 2s infinite cubic-bezier(.5,-0.2,.5,1.2);
+}
+
+@keyframes m {
+    0%, 16%   { transform: translateX(0); }
+    20%, 36%  { transform: translateX(calc(-100% - 100px)); }
+    40%, 56%  { transform: translateX(calc(-200% - 200px)); }
+    60%, 76%  { transform: translateX(calc(-300% - 300px)); }
+    80%, 96%  { transform: translateX(calc(-400% - 400px)); }
+    100%      { transform: translateX(calc(-500% - 500px)); }
+}
+
+
 
 /* ---------------------- */
 /* ------- INFO ------- */

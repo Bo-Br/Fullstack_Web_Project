@@ -76,9 +76,35 @@ while ($service = $stmt->fetch()) {
 
 
 
-    </section>
+</section>
 <!-- ############################################################################ FIN DE LA SECTION HERO ########################################################################-->
 
+<section class = 'creation'>
+    <h2>Nos créations</h2>
+    <div class = "gallery_contenair">
+        <div class="gallery">
+            <img src="https://image.noelshack.com/fichiers/2026/13/1/1774279343-coupe1.png" alt="Coupe lune">
+            <img src="https://image.noelshack.com/fichiers/2026/13/1/1774280313-coupe-2.png" alt="La coupe toilette">
+            <img src="https://image.noelshack.com/fichiers/2026/13/1/1774279343-coupe-3.png" alt="La coupe Airbag">
+            <img src="https://image.noelshack.com/fichiers/2026/13/1/1774280335-coupe-4.png" alt="La coupe visage">
+            <img src="https://image.noelshack.com/fichiers/2026/13/1/1774279480-coupe-5.png" alt="Le dégradé inversée">
+        </div>
+        <div class="gallery">
+            <img src="https://image.noelshack.com/fichiers/2026/13/1/1774280313-coupe-2.png" alt="La coupe toilette">
+            <img src="https://image.noelshack.com/fichiers/2026/13/1/1774279343-coupe-3.png" alt="La coupe Airbag">
+            <img src="https://image.noelshack.com/fichiers/2026/13/1/1774280335-coupe-4.png" alt="La coupe visage">
+            <img src="https://image.noelshack.com/fichiers/2026/13/1/1774279480-coupe-5.png" alt="Le dégradé inversée">
+            <img src="https://image.noelshack.com/fichiers/2026/13/1/1774279343-coupe1.png" alt="Coupe lune">
+        </div>
+        <div class="gallery">
+            <img src="https://image.noelshack.com/fichiers/2026/13/1/1774279343-coupe-3.png" alt="La coupe Airbag">
+            <img src="https://image.noelshack.com/fichiers/2026/13/1/1774280335-coupe-4.png" alt="La coupe visage">
+            <img src="https://image.noelshack.com/fichiers/2026/13/1/1774279480-coupe-5.png" alt="Le dégradé inversée">
+            <img src="https://image.noelshack.com/fichiers/2026/13/1/1774279343-coupe1.png" alt="Coupe lune">
+            <img src="https://image.noelshack.com/fichiers/2026/13/1/1774280313-coupe-2.png" alt="La coupe toilette">
+        </div>
+    </div>
+</section>
 
 
 
