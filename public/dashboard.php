@@ -61,18 +61,59 @@ while ($reservation = $stmt->fetch()) {
                 echo("</div>");
             echo("</div>");
 
-};
-?>
+            
+            };
+            ?>
 
 
 
 <!-- FIN DE LIGNE -->
 
-        </div>
+</div>
 <!-- FIN DU TABLEAU -->
 
-    </section>
-    
+</section>
+
+<div class="dashboard">
+       <h2>Reservation</h2>
+       <div class="table-wrapper">
+            <table>
+                <thead>
+                   <tr>
+                       <th>NOM - PRENOM</th>
+                       <th>DATE - HEURE</th>
+                       <th>STATUS</th>
+                       <th>ACTION</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                        <td>
+                            <div class = "nom_client">
+                                NOM
+                            </div>
+                        </td>
+                        <td>
+                            <div class="assignee">
+                                <div class="date">DATE</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class = "status">
+                                STATUS
+                            </div>
+                        </td>
+                        
+                        <td>
+                           <div class="bouton">
+                                BOUTONS
+                           </div>
+                        </td>
+                    </tr>
+                </tbody>    
+            </table>
+       </div>
+</div>
 
 <!-- ############################################################################ FIN DE LA SECTION RESERVATIONS ########################################################################-->
 
