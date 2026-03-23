@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div>
-        <a href="mentions.php"> Mentions légales </a> |
-        <a href="cookies.php"> Cookies </a>
+    <footer id="footer">
+    <div class="footer_link">
+        <a href="mentions.php">Mentions légales</a>
+        <span class="separator">|</span>
+        <a href="cookies.php">Cookies</a><br>
     </div>
 
-    <div>
-        <span> L'atelier du barbier © </span>
+    <div class="copyright">
+        <span>L'atelier du barbier ©</span>
     </div>
+</footer>
 </body>
 </html>
 
