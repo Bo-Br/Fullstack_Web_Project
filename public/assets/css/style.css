@@ -701,10 +701,10 @@ th {
     padding: 18px 20px;
     text-align: left;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #fff;
+    color: rgb(45, 46, 50);
     position: relative;
 }
 
@@ -720,21 +720,20 @@ th:not(:last-child)::after {
 }
 
 tbody tr {
-    background: rgba(45, 46, 50, 0.20);
+    background: rgba(45, 46, 50, 0.50);;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.3s ease;
 }
 
 tbody tr:hover {
-    background: rgba(45, 46, 50, 0.40);
+    background: rgba(45, 46, 50, 0.80);
     transform: scale(1.01);
-    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
 }
 
 td {
     padding: 16px 20px;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .priority {
@@ -743,22 +742,37 @@ td {
     gap: 6px;
 }
 
+.btn_dash{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
 
 .btn_valider{
-    background-color: green;
+    background-color: rgb(12, 224, 12);
     border-style: none;
     border-radius: 0.5rem;
-    width: 2rem;
+    width: fit-content;
+    min-height: auto;
     height: 2rem;
     margin-right: 1rem;
 }
 
+.btn_valider:hover{
+    background-color: rgb(2, 255, 2);
+}
+
 .btn_suprimer{
-    background-color: red;
+    background-color: rgb(214, 17, 17);
     border-style: none;
     border-radius: 0.5rem;
-    width: 2rem;
+    width: fit-content;
+    min-height: auto;
     height: 2rem;
+}
+
+.btn_suprimer:hover{
+    background-color: red;
 }
 
 /* div, section{

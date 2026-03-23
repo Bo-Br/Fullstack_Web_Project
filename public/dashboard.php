@@ -24,14 +24,7 @@ include_once(__DIR__ . "/../backend/other/is_admin_test.php");
 
 <!-- ####################################################################### DEBUT DE LA SECTION RESERVATIONS #########################################################################-->
     <section id = "reservations_dasboard">
-        <h2> Reservations </h2>
 
-
-
-<!-- DEBUT DU TABLEAU -->
-        <div id = "reservations_tableau_dashboard">
-
-<!-- DEBUT DE LIGNE -->
 <?php
 $sql = "SELECT * FROM reservations";
 $stmt = $pdo->query($sql);
@@ -39,23 +32,16 @@ $stmt = $pdo->query($sql);
 
 
 
-<!-- FIN DE LIGNE -->
-
-</div>
-<!-- FIN DU TABLEAU -->
-
-</section>
-
 <div class="dashboard">
        <h2>Reservation</h2>
-       <div class="table-wrapper">
+       <div class="table-wrapper box_shadow">
             <table>
                 <thead>
                    <tr>
                        <th>NOM - PRENOM</th>
                        <th>DATE - HEURE</th>
                        <th>STATUS</th>
-                       <th>ACTION</th>
+                       <th class='btn_dash'>ACTION</th>
                    </tr>
                 </thead>
                 <tbody>
@@ -83,13 +69,13 @@ while ($reservation = $stmt->fetch()) {
                         </td>
                         
                         <td>
-                           <div class='bouton'>");
+                           <div class='btn_dash'>");
                 echo("<a href='../backend/other/approve_reservation.php?id=" . $reservation['id_reservation'] . "'>");
-                echo("<button class = 'btn_valider'> Y </button>");
+                echo("<button class = 'btn_valider'> Confirmer </button>");
                 echo("</a>");
 
                 echo("<a href='../backend/other/cancel_reservation.php?id=" . $reservation['id_reservation'] . "'>");
-                echo("<button class = 'btn_suprimer'> N </button>");
+                echo("<button class = 'btn_suprimer'> Annuler </button>");
                 echo("</a>
                 </div>
                         </td>
@@ -101,9 +87,10 @@ while ($reservation = $stmt->fetch()) {
 
                 </tbody>    
             </table>
-       </div>
-</div>
+        </div>
+    </div>
 
+</section>
 <!-- ############################################################################ FIN DE LA SECTION RESERVATIONS ########################################################################-->
 
 
