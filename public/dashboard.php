@@ -35,34 +35,6 @@ include_once(__DIR__ . "/../backend/other/is_admin_test.php");
 <?php
 $sql = "SELECT * FROM reservations";
 $stmt = $pdo->query($sql);
-
-while ($reservation = $stmt->fetch()) {
-
-            echo("<div class = 'reservations_ligne_dashboard'>");
-            echo("<div class = 'reservation_nom_dashboard'>");
-            echo("<h3>" . $reservation['nom_client'] . "</h3>");
-            echo("</div>");
-            echo("<div class = 'reservation_date_dashboard'>");
-            echo("<h3>" . $reservation['date_rdv'] . " | " . $reservation['heure_rdv'] . "</h3>");
-            echo("</div>");
-            echo("<div class = 'reservation_status_dashboard'>");
-            echo("<h3>" . $reservation['statut'] . "</h3>");
-            echo("</div>");
-                echo("<div class='action'>");
-
-                echo("<a href='../backend/other/approve_reservation.php?id=" . $reservation['id_reservation'] . "'>");
-                echo("<button class = 'btn_valider'> Y </button>");
-                echo("</a>");
-
-                echo("<a href='../backend/other/cancel_reservation.php?id=" . $reservation['id_reservation'] . "'>");
-                echo("<button class = 'btn_suprimer'> N </button>");
-                echo("</a>");
-
-                echo("</div>");
-            echo("</div>");
-
-            
-            };
             ?>
 
 
@@ -87,29 +59,46 @@ while ($reservation = $stmt->fetch()) {
                    </tr>
                 </thead>
                 <tbody>
-                   <tr>
+
+
+<?php
+while ($reservation = $stmt->fetch()) {
+                   echo("<tr>
                         <td>
-                            <div class = "nom_client">
-                                NOM
+                            <div class = 'nom_client'>
+                                " . $reservation['nom_client'] . "
                             </div>
                         </td>
                         <td>
-                            <div class="assignee">
-                                <div class="date">DATE</div>
+                            <div class='assignee'>
+                                <div class='date'>
+                                " . $reservation['date_rdv'] . " | " . $reservation['heure_rdv'] . "
+                                </div>
                             </div>
                         </td>
                         <td>
-                            <div class = "status">
-                                STATUS
+                            <div class = 'status'>
+                                " . $reservation['statut'] . "
                             </div>
                         </td>
                         
                         <td>
-                           <div class="bouton">
-                                BOUTONS
-                           </div>
+                           <div class='bouton'>");
+                echo("<a href='../backend/other/approve_reservation.php?id=" . $reservation['id_reservation'] . "'>");
+                echo("<button class = 'btn_valider'> Y </button>");
+                echo("</a>");
+
+                echo("<a href='../backend/other/cancel_reservation.php?id=" . $reservation['id_reservation'] . "'>");
+                echo("<button class = 'btn_suprimer'> N </button>");
+                echo("</a>
+                </div>
                         </td>
-                    </tr>
+                    </tr>");
+            };
+?>
+
+
+
                 </tbody>    
             </table>
        </div>

@@ -667,9 +667,6 @@ section {
     
 }
 
-.reservation_date_dashboard{
-}
-
 .dashboard {
     display: flex;
     flex-direction: column;
