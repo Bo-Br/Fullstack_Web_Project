@@ -235,7 +235,7 @@ while ($service = $stmt->fetch()) {
         echo("    <div class='card_description'>");
         echo("        <p>".$service['description'] . "</p>");
         echo("<a href='../backend/other/delete_service.php?id=" . $service['id_service'] . "'>"); // Ajouter un bouton qui redirect vers la page de delete avec un id en methode Get. 
-                echo("<button class = 'btn_suprimer'> Sup </button>"); 
+                echo("<button class = 'btn_suprimer'> Supprimer </button>"); 
                 echo("</a>");
         echo("</div>");
         echo("</div>");

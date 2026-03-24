@@ -1,7 +1,13 @@
 
 <?php
 session_start();
+// 1. on inclue les fichiers PHPMailer
+require 'phpmailer/src/Exception.php';
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -159,9 +165,9 @@ session_start();
 
                         <input type="date" name="date" 
                         min= 
-                        <?php echo $aujourdhui; ?> 
+                        "<?php echo $aujourdhui; ?> "
                         value =  
-                        <?php echo $aujourdhui; ?> 
+                        "<?php echo $aujourdhui; ?> "
                         required>
 
 
@@ -249,7 +255,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $stmt = $pdo->prepare($sql);
 
-        $stmt->execute([
+        $success = $stmt->execute([
             ':service' => $service,
             ':date_rdv' => $date_rdv,
             ':heure_rdv' => $heure_rdv,
@@ -263,6 +269,76 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo "Remplis tous les champs.";
     };
+
+    if ($success) {
+        
+        // 4. Configuration et envoi de l'email PHPMailer
+        $mail = new PHPMailer(true);
+
+        try {
+            $mail->CharSet = 'UTF-8';
+            $mail->isSMTP();
+            $mail->Host       = 'sandbox.smtp.mailtrap.io'; // ici votre URL Mailtrap
+            $mail->SMTPAuth   = true;
+            $mail->Port       = 2525;
+            $mail->Username   = '483b7d175ae7af'; // ici votre adresse mail Mailtrap
+            $mail->Password   = '8ac7f16393be14';// ici votre mot de passe Mailtrap
+
+            $mail->setFrom('notif@latelierdubarbier.fr', "L'atelier du barbier");
+            $mail->addAddress($email, $nom); 
+
+            $mail->isHTML(true);
+            $mail->Subject = "Confirmation de reservation - $nom";
+            
+            $mail->Body = "
+<h2 style='color:#333;'>Confirmation de votre réservation</h2>
+
+<p>Bonjour <strong>" . htmlspecialchars($nom) . "</strong>,</p>
+
+<p>Votre réservation a bien été enregistrée. Voici les détails :</p>
+
+<table style='border-collapse: collapse; width: 100%; max-width: 500px;'>
+    <tr>
+        <td style='padding:8px; border:1px solid #ddd;'><strong>Date</strong></td>
+        <td style='padding:8px; border:1px solid #ddd;'>" . htmlspecialchars($date_rdv) . "</td>
+    </tr>
+    <tr>
+        <td style='padding:8px; border:1px solid #ddd;'><strong>Heure</strong></td>
+        <td style='padding:8px; border:1px solid #ddd;'>" . htmlspecialchars($horaire) . "</td>
+    </tr>
+    <tr>
+        <td style='padding:8px; border:1px solid #ddd;'><strong>Email</strong></td>
+        <td style='padding:8px; border:1px solid #ddd;'>" . htmlspecialchars($email) . "</td>
+    </tr>
+    <tr>
+        <td style='padding:8px; border:1px solid #ddd;'><strong>Téléphone</strong></td>
+        <td style='padding:8px; border:1px solid #ddd;'>" . htmlspecialchars($telephone) . "</td>
+    </tr>
+</table>
+
+<p style='margin-top:20px;'>
+Nous vous contacterons si nécessaire.<br>
+Merci pour votre confiance.
+</p>
+
+<p style='color:#777; font-size:12px;'>
+L'atelier du barbier
+</p>
+";
+
+
+            $mail->send();
+
+            echo " Succès ! Message envoyé a votre boite mail. Admin contacté";
+
+        } catch (Exception $e) {
+            echo "Erreur lors de l'envoi de l'email : {$mail->ErrorInfo}";
+        }
+
+    } else {
+        echo "Erreur BDD : " . $conn->error;
+    }
+
 };
 ?>
         </div>
