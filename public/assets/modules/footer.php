@@ -1,3 +1,5 @@
+<!-- Ceci est un module de footer a mettre dans chaque page -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

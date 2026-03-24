@@ -152,7 +152,7 @@ session_start();
                 <div class = "date_horaire">
                     <div class = "reservation_item">
                         <p>Date:</p>
-
+                        <!-- Ajout du minimum de date réservable a aujourd'hui pour éviter les réservation pour les jours passés -->
                         <?php
                         $aujourdhui = date('Y-m-d');
                         ?>
@@ -209,7 +209,7 @@ session_start();
                                 <?php
                                 $sql = "SELECT * FROM services";
                                 $stmt = $pdo->query($sql);
-
+                                // Ajout des services dans les services possibles a reserver (avec l'ID)
                                 while ($service = $stmt->fetch()) {
                                         echo("<option value=" .$service['id_service'] . ">" . $service['nom'] . "</option>");
 
@@ -226,9 +226,9 @@ session_start();
         
             </form>
 <?php
-
+// Ajout de la reservation avec requetes preparées pour eviter injections SQL
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+    // On met en vide si on a rien mis
     $nom = $_POST['nom'] ?? '';
     $email = $_POST['email'] ?? '';
     $telephone = $_POST['telephone'] ?? '';
@@ -237,8 +237,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $service = $_POST['service'] ?? '';
 
     if (!empty($nom) && !empty($email) && !empty($telephone) && !empty($date) && !empty($horaire) && !empty($service)) {
-
+    // test si un des champs est vide
         $date_rdv = $date;
+        // On ajoute :00 car dans la BDD On a le temps au format 00:00:00
         $heure_rdv = $horaire . ":00";
 
         $sql = "INSERT INTO reservations 

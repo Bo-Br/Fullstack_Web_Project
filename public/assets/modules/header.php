@@ -1,5 +1,9 @@
+<!-- Ceci est un module de header a mettre dans chaque page -->
+
+
 <?php
-include_once(__DIR__ . "/../../../backend/other/get_db.php");
+
+include_once(__DIR__ . "/../../../backend/other/get_db.php"); // Connection a la BDD
 
 ?>
 <!DOCTYPE html>
@@ -28,13 +32,13 @@ include_once(__DIR__ . "/../../../backend/other/get_db.php");
 
 
             <?php
-            if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] == 0) {
+            if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] == 0) { //Si n'est pas admin, on met le bouton login et l'icone se connecter dans le header 
 
                 echo("<a href='login.php' class='btn_nav btn_icon'>");
                 echo("<img class='icon_btn' src='assets/images/logo_login.png' alt='Se connecter'>");
                 echo("</a>");
 
-            }else{
+            }else{ // Si est admin mettre lien vers le dasboard et un bouton de déconnexion
                 echo("<a href= '../backend/other/logout.php' class='btn_nav'> Déconnexion </a>");
                 echo("<a href= 'dashboard.php' class='btn_nav'> Dashboard </a>");
             };

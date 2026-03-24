@@ -3,7 +3,7 @@
 <?php 
 
 include_once(__DIR__ . "/../backend/other/is_admin_test.php");
-// session_destroy(); Destroy la session si besoin
+// session_destroy(); Destroy la session si besoin (Pour tests)
 ?>
 
 
@@ -136,7 +136,7 @@ include_once(__DIR__ . "/../backend/other/is_admin_test.php");
 <?php
 $sql = "SELECT * FROM reservations";
 $stmt = $pdo->query($sql);
-            ?>
+?>
 
 
 
@@ -156,11 +156,12 @@ $stmt = $pdo->query($sql);
 
 
 <?php
+// Ajouter une ligne avec les données de réservation de la BDD 
 while ($reservation = $stmt->fetch()) {
                    echo("<tr>
                         <td>
                             <div class = 'nom_client'>
-                                " . $reservation['nom_client'] . "
+                                " . $reservation['nom_client'] . " 
                             </div>
                         </td>
                         <td>
@@ -217,6 +218,7 @@ while ($reservation = $stmt->fetch()) {
 <?php
 $sql = "SELECT * FROM services";
 $stmt = $pdo->query($sql);
+// Ajouter une ligne avec les données de services de la BDD 
 
 while ($service = $stmt->fetch()) {
 
@@ -232,8 +234,8 @@ while ($service = $stmt->fetch()) {
             
         echo("    <div class='card_description'>");
         echo("        <p>".$service['description'] . "</p>");
-        echo("<a href='../backend/other/delete_service.php?id=" . $service['id_service'] . "'>");
-                echo("<button class = 'btn_suprimer'> Sup </button>");
+        echo("<a href='../backend/other/delete_service.php?id=" . $service['id_service'] . "'>"); // Ajouter un bouton qui redirect vers la page de delete avec un id en methode Get. 
+                echo("<button class = 'btn_suprimer'> Sup </button>"); 
                 echo("</a>");
         echo("</div>");
         echo("</div>");

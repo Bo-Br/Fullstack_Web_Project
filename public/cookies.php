@@ -127,7 +127,7 @@
             <p>
                 Politique de cookies</br>
                 Ce site utilise uniquement des cookies techniques nécessaires à son bon fonctionnement (ex : gestion de session).</br>
-                Aucun cookie de suivi ou publicitaire n’est utilisé.</br>
+                Aucun cookie de suivi ou publicitaire n'est utilisé.</br>
                 Vous pouvez configurer votre navigateur pour refuser les cookies.
             </p>
         </div>
