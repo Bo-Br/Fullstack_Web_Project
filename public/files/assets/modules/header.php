@@ -42,7 +42,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . "/public/backend/other/get_db.php"); //
 
             }else{ // Si est admin mettre lien vers le dasboard et un bouton de déconnexion
                 echo("<a href= '/public/backend/other/logout.php' class='btn_nav'> Déconnexion </a>");
-                echo("<a href= 'dashboard.php' class='btn_nav'> Dashboard </a>");
+                echo("<a href= '/public/other/dashboard.php' class='btn_nav'> Dashboard </a>");
             };
             ?>
 
