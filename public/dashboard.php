@@ -274,33 +274,6 @@ while ($service = $stmt->fetch()) {
 
 <!-- ######################################################################## DEBUT DE LA SECTION INFO ########################################################################-->
 
-<!-- DEBUT DU TABLEAU -->
-        <div id = "horaires_tableau">
-
-<!-- DEBUT DE LIGNE -->
-            <div class = "horaires_ligne">
-
-                <div class = "jour">
-                    <h3>Lundi</h3>
-                </div>
-
-                <div class = "horaire">
-                    <h3>08H00 - 20H00</h3>
-                </div>
-
-            </div>
-<!-- FIN DE LIGNE -->
-
-        </div>
-<!-- FIN DU TABLEAU -->
-
-
-
-            </div>
-
-        </div>
-
-    </section>
 
 <!-- ####################################################################### FIN DE LA SECTION INFO #######################################################################-->
 
