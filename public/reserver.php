@@ -133,25 +133,25 @@ session_start();
             <h1>Réserver</h1>
             <form method="POST" action="reserver.php">
                 <div class = "reservation_line">
-                    <div class = "reservation_item">
-                        <p>Nom complet:</p>            
+                    <div class = "reservation_item ">
+                        <label>Nom complet:</label>            
                         <input type="text" name="nom" placeholder="  Nom Complet" required>
                     </div>
                 
                 </div>
                 <div class = "reservation_line">
                     <div class = "reservation_item">
-                        <p>Email:</p>
+                        <label>Email:</label>
                         <input type="email" name="email" placeholder="  Email" required>
                     </div>
                     <div class = "reservation_item">
-                        <p>Téléphone:</p>
+                        <label>Téléphone:</label>
                         <input type="text" name="telephone" placeholder="  Telephone" required> <br>
                     </div>
                 </div>
                 <div class = "date_horaire">
                     <div class = "reservation_item">
-                        <p>Date:</p>
+                        <label>Date:</label>
 
                         <?php
                         $aujourdhui = date('Y-m-d');
