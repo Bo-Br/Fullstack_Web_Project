@@ -1,14 +1,13 @@
 <?php
 session_start();
-require_once("./assets/modules/header.php"); // если там нет вывода (важно)
-
-// редирект если уже залогинен
+require_once("./assets/modules/header.php"); 
+// redirect
 if (isset($_SESSION['user_id']) && $_SESSION['is_admin'] == 1) {
     header("Location: dashboard.php");
     exit;
 }
 
-// обработка формы
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['username']);
     $password = $_POST['password'];
