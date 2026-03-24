@@ -1,9 +1,9 @@
 <?php
 
-$host = 'sql104.infinityfree.com';
-$dbname = 'if0_41343328_fullstack_web';
-$username = 'if0_41343328';
-$password = 'rjw8p95Gcxvd';
+$host = 'YOURHOST';
+$dbname = 'YOUR DB NAME';
+$username = 'USERNAME';
+$password = 'PASSWORD';
 $port = '3306';
 
 try {
