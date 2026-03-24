@@ -1,7 +1,36 @@
-
 <?php
 session_start();
+require_once("./assets/modules/header.php"); // если там нет вывода (важно)
 
+// редирект если уже залогинен
+if (isset($_SESSION['user_id']) && $_SESSION['is_admin'] == 1) {
+    header("Location: dashboard.php");
+    exit;
+}
+
+// обработка формы
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = trim($_POST['username']);
+    $password = $_POST['password'];
+
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email_user = ?");
+    $stmt->execute([$email]);
+    $user = $stmt->fetch();
+
+    if ($user && password_verify($password, $user['password_user'])) {
+
+        $_SESSION['user_id'] = $user['id_user'];
+        $_SESSION['email'] = $user['email_user'];
+        $_SESSION['is_admin'] = $user['is_admin'];
+
+        if ($user['is_admin']) {
+            header("Location: dashboard.php");
+        } else {
+            header("Location: index.php");
+        }
+        exit;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -123,12 +152,7 @@ session_start();
 </svg>
     <header>
 
-        <?php require_once("./assets/modules/header.php");  
-        // Test si admni
-            if (isset($_SESSION['user_id']) && $_SESSION['is_admin'] = 1) {
-                header("Location: dashboard.php");
-                exit;
-            }; ?>
+        <?php require_once("./assets/modules/header.php");?>
 
     </header>
 
@@ -148,37 +172,6 @@ session_start();
         </div>
     </section>
 
-<?php
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim($_POST['username']); // your form uses "username" field
-    $password = $_POST['password'];
-
-    // Fetch user
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE email_user = ?");
-    $stmt->execute([$email]);
-    $user = $stmt->fetch();
-
-    if ($user) {
-        if (password_verify($password, $user['password_user'])) {
-
-            $_SESSION['user_id'] = $user['id_user'];
-            $_SESSION['email'] = $user['email_user'];
-            $_SESSION['is_admin'] = $user['is_admin'];
-            
-
-            if ($user['is_admin']) {
-                header("Location: dashboard.php");
-            } else {
-                header("Location: index.php");
-            }
-            exit;
-        } else {
-            echo "Mot de passe incorrect.";
-        }
-    }
-};
-?>
 
     <footer> 
 
