@@ -69,18 +69,6 @@ Sur votre ordinateur :
 - <img width="1216" height="229" alt="image" src="https://github.com/user-attachments/assets/7657c414-c1fd-4196-8588-394220f1b54e" />
 
 
-------
-
-### Déployer en local
-
-
-------
-
-### Déployer sur InfinityFree
-
-
-------
-
 ## Documents complémentaires
 
 Fait par : 
@@ -88,7 +76,7 @@ Fait par :
 - Bogdane ["Bo-Br"](https://github.com/Bo-Br)
 - Tiago  ["4h4ze"](https://github.com/4h4ze)
 - Date début : 16/03/2026
-- Date fin : XX/XX/XXXX
-- Lien vers le site déployé : [--pas déployé pour l'instant--]()
+- Date fin : 24/03/2026
+- Lien vers le site déployé : [lien](https://bogbra.42web.io/)
 
 ------
