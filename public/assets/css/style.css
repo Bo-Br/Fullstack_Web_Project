@@ -13,6 +13,7 @@ body {
     background-color: #F4F5F7;
 }
 
+
 h1, h2 {
     font-family: Roboto-Serif;
     color: #FFC300;
@@ -32,6 +33,93 @@ p {
 #service #info {
     margin-top: 3rem;
 }
+
+
+/* --------- */
+/* BACKGROUND */
+/* ----------- */
+
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+#home-anim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  z-index: -1;
+  pointer-events: none;
+  object-fit: cover; 
+}
+
+#home {
+  clip-path: url(#cache);
+}
+
+#red {
+  fill: none;
+  opacity: 0.15;
+  stroke: #2D2E32;
+  stroke-width: 12;
+  stroke-miterlimit:10;
+  animation: show 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out; 
+}
+
+#blue {
+  fill: none;
+  opacity: 0.15;
+  stroke: #FFC300;
+  stroke-width: 12;
+  stroke-miterlimit:10;
+  animation: show 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#light-blue {
+  fill: none;
+  opacity: 0.15;
+  stroke: #FFC300;
+  stroke-width: 6;
+  stroke-miterlimit:10;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 800;
+  animation: draw 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;    
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+ }
+    }
+
+@keyframes show {
+    0% {
+        opacity: 0.15;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.15;
+    }
+}
+
+
 
 /* --------- */
 /* HEADER */
@@ -277,7 +365,7 @@ footer {
     width: 320px; 
     height: 300px;
     padding: 20px; 
-    background-color: rgba(45, 46, 50, 0.50);
+    background-color: rgba(45, 46, 50);
     background-clip: padding-box;
     border: 5px solid rgba(255, 196, 70);
     border-radius: 12px;
@@ -365,10 +453,10 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    background-color: rgba(45, 46, 50, 0.50);
+    background-color: rgba(45, 46, 50);
     background-clip: padding-box;
-    border: 5px solid rgba(255, 196, 70, 0.50);
-    border-radius: 12px;
+    border: 5px solid rgba(255, 196, 70);
+    border-radius: 25px;
     padding: 1rem;
 
 }
@@ -547,7 +635,7 @@ footer {
     padding: 2rem;
     width: fit-content;
     max-width: 100%;
-    background-color: rgba(45, 46, 50, 0.50);
+    background-color: rgba(45, 46, 50);
     background-clip: padding-box;
     border: 15px solid rgba(255, 196, 70);
     border-radius: 15px;
@@ -701,7 +789,7 @@ section {
     width: fit-content;
     min-width: fit-content;
     height: auto;
-    background-color: rgba(45, 46, 50, 0.50);
+    background-color: rgba(45, 46, 50);
     background-clip: padding-box;
     border: 5px solid rgba(255, 196, 70, 0.70);
     border-radius: 15px;
@@ -772,7 +860,7 @@ th:not(:last-child)::after {
 }
 
 tbody tr {
-    background: rgba(45, 46, 50, 0.50);;
+    background: rgba(45, 46, 50);;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.3s ease;
 }

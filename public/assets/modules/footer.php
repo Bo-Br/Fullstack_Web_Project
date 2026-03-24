@@ -11,7 +11,11 @@
     <div class="footer_link">
         <a href="mentions.php">Mentions légales</a>
         <span class="separator">|</span>
-        <a href="cookies.php">Cookies</a><br>
+        <a href="cookies.php">Cookies</a>
+        <span class="separator">|</span>
+        <a href="cookies.php">A propos</a>
+        <span class="separator">|</span>
+        <a href="cookies.php">Contact</a><br>
     </div>
 
     <div class="copyright">
