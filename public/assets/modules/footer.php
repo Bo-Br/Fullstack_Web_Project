@@ -15,9 +15,7 @@
         <span class="separator">|</span>
         <a href="cookies.php">Cookies</a>
         <span class="separator">|</span>
-        <a href="cookies.php">A propos</a>
-        <span class="separator">|</span>
-        <a href="cookies.php">Contact</a><br>
+        <a href="a_propos.php">A propos</a><br>
     </div>
 
     <div class="copyright">

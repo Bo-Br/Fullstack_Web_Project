@@ -1027,3 +1027,28 @@ td {
         min-width: 800px;
     }
 }
+
+/* ---------------------- */
+/* ------- A PROPOS ------- */
+/* -------------------- */
+.main_page h2{
+    font-size: 25px;
+}
+
+.propos_main{
+    margin-top: 3rem;
+    width: 70%;
+    height: 45rem;
+}
+.propos_style{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.propos_item{
+    margin-bottom: 3rem;
+    width: 80%;
+}
