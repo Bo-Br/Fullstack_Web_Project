@@ -1,12 +1,21 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mentions légales</title>
-        <link rel="stylesheet" href="assets/css/style.css">
-    </head>
-    <body>
+
+<!-- test si admin -->
+<?php 
+
+include_once($_SERVER['DOCUMENT_ROOT'] . "/public/backend/other/is_admin_test.php");
+// session_destroy(); Destroy la session si besoin (Pour tests)
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> dashboard </title>
+    <link rel="stylesheet" href="/public/files/assets/css/style.css">
+</head>
+<body>
         <svg version="1.1" id="home-anim" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1820 1080" preserveAspectRatio="xMidYMid slice" style="enable-background:new 0 0 1820 1080;" xml:space="preserve">
 
 <g id="home">
@@ -115,33 +124,167 @@
 	</g>
 </g>
 </svg>
-        
-    </body>
-    </html>
-    
     <header>
 
-        <?php require_once("./assets/modules/header.php");   ?>
+        <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/public/files/assets/modules/header.php"); ?>
 
     </header>
 
-    <section class = "main_bck">
-        <div class = "main_page">
-            <h1>Mentions légales</h1>
-            <p>
-                Éditeur du siteNom : Bogdane BraounEmail : <a href="mailto:112286@ecole-it.com">112286@ecole-it.com</a></br>
-                HébergementHébergeur : InfinityFreeSite : <a href="https://infinityfree.net">https://infinityfree.net</a> </br>
-                Responsable de publication: L’Atelier du Barbier</br>
-                Propriété intellectuelleLe contenu du site (textes, images, code) est protégé. Toute reproduction est interdite sans autorisation.</br>
-                Responsabilité: L’éditeur ne peut être tenu responsable des erreurs ou indisponibilités du site.</br>
-                Données personnellesLes données collectées via le formulaire (nom, email, téléphone) sont utilisées uniquement pour la gestion des réservations.Aucune donnée n’est vendue ou partagée.</br>
-                Vous pouvez demander la suppression de vos données à : <a href="mailto:112286@ecole-it.com">112286@ecole-it.com</a>
-            </p>
+<!-- ####################################################################### DEBUT DE LA SECTION RESERVATIONS #########################################################################-->
+    <section id = "reservations_dasboard">
+
+<?php
+$sql = "SELECT * FROM reservations";
+$stmt = $pdo->query($sql);
+?>
+
+
+
+<div class="dashboard">
+       <h2>Reservation</h2>
+       <div class="table-wrapper box_shadow">
+            <table>
+                <thead>
+                   <tr>
+                       <th>NOM - PRENOM</th>
+                       <th>DATE - HEURE</th>
+                       <th>STATUS</th>
+                       <th class='btn_dash'>ACTION</th>
+                   </tr>
+                </thead>
+                <tbody>
+
+
+<?php
+// Ajouter une ligne avec les données de réservation de la BDD 
+while ($reservation = $stmt->fetch()) {
+                   echo("<tr>
+                        <td>
+                            <div class = 'nom_client'>
+                                " . $reservation['nom_client'] . " 
+                            </div>
+                        </td>
+                        <td>
+                            <div class='assignee'>
+                                <div class='date'>
+                                " . $reservation['date_rdv'] . " | " . $reservation['heure_rdv'] . "
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class = 'status'>
+                                " . $reservation['statut'] . "
+                            </div>
+                        </td>
+                        
+                        <td>
+                           <div class='btn_dash'>");
+                echo("<a href='/public/backend/other/approve_reservation.php?id=" . $reservation['id_reservation'] . "'>");
+                echo("<button class = 'btn_valider'> Confirmer </button>");
+                echo("</a>");
+
+                echo("<a href='/public/backend/other/cancel_reservation.php?id=" . $reservation['id_reservation'] . "'>");
+                echo("<button class = 'btn_suprimer'> Annuler </button>");
+                echo("</a>
+                </div>
+                        </td>
+                    </tr>");
+            };
+?>
+
+
+
+                </tbody>    
+            </table>
         </div>
+    </div>
+
+</section>
+<!-- ############################################################################ FIN DE LA SECTION RESERVATIONS ########################################################################-->
+
+
+
+
+
+
+<!-- ####################################################################### DEBUT DE LA SECTION SERVICES #######################################################################-->
+
+<section id = "services">
+    <h2> Nos prestations </h2> <br>
+
+    <div class = "card_content">
+        <div class = "card_line">
+
+<?php
+$sql = "SELECT * FROM services";
+$stmt = $pdo->query($sql);
+// Ajouter une ligne avec les données de services de la BDD 
+
+while ($service = $stmt->fetch()) {
+
+        echo("<div class='card_service box_shadow'>");
+        echo("    <div class='card_header'>");
+        echo("        <h3 class='title'>".$service['nom'] . "</h3>");
+        echo("        <span class='price'>".$service['duree_minutes'] . "min - ".$service['prix_euros'] . "€ </span>");
+        echo("</div>");
+              
+        echo("<div class='card_img'>");
+        echo("        <img src='assets/images/card-coiffe.png' alt='Illustration coupe et coiffage'>");
+        echo("</div>");
+            
+        echo("    <div class='card_description'>");
+        echo("        <p>".$service['description'] . "</p>");
+        echo("<a href='/public/backend/other/delete_service.php?id=" . $service['id_service'] . "'>"); // Ajouter un bouton qui redirect vers la page de delete avec un id en methode Get. 
+                echo("<button class = 'btn_suprimer'> Supprimer </button>"); 
+                echo("</a>");
+        echo("</div>");
+        echo("</div>");
+
+} 
+
+
+
+?>
+<a href="create_service.php">
+<button>
+<div class="card_service box_shadow">
+    <div class="card_header">
+        <h3 class="title"> AJOUTER UN SERVICE </h3>
+    
+    </div>
+</div>
+</button>
+</a>
+
+
+
+
+        </div>
+        
+    </div>
+
+
+
     </section>
+<!-- ####################################################################### FIN DE LA SECTION SERVICES #######################################################################-->
+
+
+
+
+
+
+
+<!-- ######################################################################## DEBUT DE LA SECTION INFO ########################################################################-->
+
+
+<!-- ####################################################################### FIN DE LA SECTION INFO #######################################################################-->
 
     <footer> 
 
-        <?php require_once("./assets/modules/footer.php");   ?> 
+        <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/public/files/assets/modules/footer.php");   ?> 
 
     </footer>
+</body>
+</html>
+
+

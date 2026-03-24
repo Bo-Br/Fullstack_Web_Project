@@ -1,44 +1,10 @@
-<?php
-session_start();
-require_once("./assets/modules/header.php"); 
-// redirect vers le dashboard si est admin 
-if (isset($_SESSION['user_id']) && $_SESSION['is_admin'] == 1) {
-    header("Location: dashboard.php");
-    exit;
-}
-
-// Verification du mot de passe avec des requetes préparées pour éviter les injections SQL
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim($_POST['username']);
-    $password = $_POST['password'];
-
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE email_user = ?");
-    $stmt->execute([$email]);
-    $user = $stmt->fetch();
-
-    if ($user && password_verify($password, $user['password_user'])) {
-
-        $_SESSION['user_id'] = $user['id_user'];
-        $_SESSION['email'] = $user['email_user'];
-        $_SESSION['is_admin'] = $user['is_admin'];
-
-        if ($user['is_admin']) {
-            header("Location: dashboard.php");
-        } else {
-            header("Location: index.php");
-        }
-        exit;
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Cookies</title>
+    <link rel="stylesheet" href="/public/files/assets/css/style.css">
 </head>
 <body>
         <svg version="1.1" id="home-anim" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1820 1080" preserveAspectRatio="xMidYMid slice" style="enable-background:new 0 0 1820 1080;" xml:space="preserve">
@@ -151,32 +117,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </svg>
     <header>
 
-        <?php require_once("./assets/modules/header.php");?>
+        <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/public/files/assets/modules/header.php");   ?>
 
     </header>
 
     <section class = "main_bck">
-        <div class = "login main_page" >
-            <h1>Login</h1>
-            <form method="POST" action="login.php">
-                <label for="username">Identifiant :</label><br>
-                <input type="text" id="username" name="username" required><br><br>
+        <div class = "main_page propos_main">
+			<div class = "propos_style">
+				<div class = "propos_item">
+					<h1>A propos</h1>
+					<p>Bien plus qu'un simple coup de tondeuse. L'Atelier du Barbier, c'est le retour à l'artisanat pur. Ici, on ne fait pas d'abattage : on prend le temps, on analyse, on sculpte.
+				</div>
+				<div class = "propos_item">
+					<h2>L'Histoire</h2>
+					<p>Fondé en 2020 par Bob, L'Atelier du Barbier est né d'une frustration : celle de voir le métier se perdre dans des salons sans personnalité. Un lieu où la technique irréprochable rencontre un vrai moment de déconnexion.</p>
+				</div>
+				<div class = "propos_item">
+					<h2>Le Savoir-Faire</h2>
+					<p>Notre approche est stricte : chaque coupe, chaque taille de barbe commence par un diagnostic visagiste. Morphologie du visage, implantation du poil, style de vie... rien n'est laissé au hasard. Nous travaillons avec précision, que ce soit pour un fondu à blanc millimétré ou une taille au coupe-choux traditionnel, en utilisant des produits haut de gamme.</p>
+				</div>
+				<div>
+					<h2>L'Expérience</h2>
+					<p>Franchir la porte de L'Atelier, c'est se plonger dans une atmosphère vintage. On s'assoit dans le fauteuil, on lâche prise, et on laisse le professionnel travailler.</p>
+				</div>
+			</div>
 
-                <label for="password">Mot de passe :</label><br>
-                <input type="password" id="password" name="password" required><br><br>
-                <div class = "btn_login">
-                    <button type="submit" class = "btn_submit">Se connecter</button>
-                </div>
-            </form>
-        </div>
+		</div>
     </section>
+
 
 
     <footer> 
 
-        <?php require_once("./assets/modules/footer.php");   ?> 
+        <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/public/files/assets/modules/footer.php");   ?> 
 
     </footer>
-    <script src="assets/js/validation_login.js"></script>
 </body>
 </html>

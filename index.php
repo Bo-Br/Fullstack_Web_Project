@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/public/files/assets/css/style.css">
     <title> Accueil </title>
 </head>
 <body>
@@ -123,7 +123,7 @@ session_start();
 
     <header>
 
-        <?php require_once("./assets/modules/header.php");   ?>
+        <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/public/files/assets/modules/header.php");   ?>
 
     </header>
 
@@ -131,11 +131,11 @@ session_start();
 
     <section id="hero">
         <div class="hero_content">
-            <img class="logo_hero" src="assets/images/logo_hero.png" alt="Logo L'Atelier du Barbier">
+            <img class="logo_hero" src="/public/files/assets/images/logo_hero.png" alt="Logo L'Atelier du Barbier">
             <div class="texte_hero">
                 <h1>Un salon à l'ambiance vintage</h1>
                 <p>Venez découvrir des services de coiffure et de barbe de qualité qui allient savoir-faire traditionnel et modernité. En plus de ses différents services de soins, le salon vous offre l'accès à des paires de chaussures rares et exclusives grâce à son Sneakers shop.</p>
-                <a class="btn_nav" href="reserver.php">Prenez rendez-vous</a>
+                <a class="btn_nav" href="/public/files/reserver.php">Prenez rendez-vous</a>
             </div>
         </div>
     </section>
@@ -168,7 +168,7 @@ while ($service = $stmt->fetch()) {
         echo("</div>");
               
         echo("<div class='card_img'>");
-        echo("        <img src='assets/images/card-coiffe.png' alt='Illustration coupe et coiffage'>");
+        echo("        <img src='/public/files/assets/images/card-coiffe.png' alt='Illustration coupe et coiffage'>");
         echo("</div>");
             
         echo("    <div class='card_description'>");
@@ -230,11 +230,11 @@ while ($service = $stmt->fetch()) {
                     <div class = "info_salon">
                         <div class = "info_texte">
                             <div class = "texte_info">
-                                <img src="assets/images/icn_loc.png" alt="">
+                                <img src="/public/files/assets/images/icn_loc.png" alt="">
                                 <p> 3 Avenue du Barbier 12345 (Atelier) </p>
                             </div>
                             <div class = "texte_info">
-                                <img src="assets/images/icn_tel.png" alt="">
+                                <img src="/public/files/assets/images/icn_tel.png" alt="">
                                 <p>06.07.08.09.10</p>
                             </div>
                         </div> 
@@ -285,7 +285,7 @@ while ($service = $stmt->fetch()) {
 
     <footer> 
 
-        <?php require_once("./assets/modules/footer.php");   ?> 
+        <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/public/files/assets/modules/footer.php");   ?> 
 
     </footer>
 </body>

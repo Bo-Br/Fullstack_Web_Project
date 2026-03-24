@@ -1,10 +1,44 @@
+<?php
+session_start();
+require_once($_SERVER['DOCUMENT_ROOT'] . "/public/files/assets/modules/header.php"); 
+// redirect vers le dashboard si est admin 
+if (isset($_SESSION['user_id']) && $_SESSION['is_admin'] == 1) {
+    header("Location: /public/files/dashboard.php");
+    exit;
+}
+
+// Verification du mot de passe avec des requetes préparées pour éviter les injections SQL
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = trim($_POST['username']);
+    $password = $_POST['password'];
+
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email_user = ?");
+    $stmt->execute([$email]);
+    $user = $stmt->fetch();
+
+    if ($user && password_verify($password, $user['password_user'])) {
+
+        $_SESSION['user_id'] = $user['id_user'];
+        $_SESSION['email'] = $user['email_user'];
+        $_SESSION['is_admin'] = $user['is_admin'];
+
+        if ($user['is_admin']) {
+            header("Location: /public/files/dashboard.php");
+        } else {
+            header("Location: /index.php");
+        }
+        exit;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookies</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>login</title>
+    <link rel="stylesheet" href="/public/files/assets/css/style.css">
 </head>
 <body>
         <svg version="1.1" id="home-anim" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1820 1080" preserveAspectRatio="xMidYMid slice" style="enable-background:new 0 0 1820 1080;" xml:space="preserve">
@@ -117,28 +151,32 @@
 </svg>
     <header>
 
-        <?php require_once("./assets/modules/header.php");   ?>
+        <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/public/files/assets/modules/header.php");?>
 
     </header>
 
     <section class = "main_bck">
-        <div class = "main_page">
-            <h1>Cookies</h1>
-            <p>
-                Politique de cookies</br>
-                Ce site utilise uniquement des cookies techniques nécessaires à son bon fonctionnement (ex : gestion de session).</br>
-                Aucun cookie de suivi ou publicitaire n'est utilisé.</br>
-                Vous pouvez configurer votre navigateur pour refuser les cookies.
-            </p>
+        <div class = "login main_page" >
+            <h1>Login</h1>
+            <form method="POST" action="login.php">
+                <label for="username">Identifiant :</label><br>
+                <input type="text" id="username" name="username" required><br><br>
+
+                <label for="password">Mot de passe :</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+                <div class = "btn_login">
+                    <button type="submit" class = "btn_submit">Se connecter</button>
+                </div>
+            </form>
         </div>
     </section>
 
 
-
     <footer> 
 
-        <?php require_once("./assets/modules/footer.php");   ?> 
+        <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/public/files/assets/modules/footer.php");   ?> 
 
     </footer>
+    <script src="/public/files/assets/js/validation_login.js"></script>
 </body>
 </html>

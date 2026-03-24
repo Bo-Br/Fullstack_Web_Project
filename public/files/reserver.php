@@ -2,9 +2,9 @@
 <?php
 session_start();
 // 1. on inclue les fichiers PHPMailer
-require 'phpmailer/src/Exception.php';
-require 'phpmailer/src/PHPMailer.php';
-require 'phpmailer/src/SMTP.php';
+require_once (__DIR__ . '/phpmailer/src/Exception.php');
+require_once (__DIR__ . '/phpmailer/src/PHPMailer.php');
+require_once(__DIR__ . '/phpmailer/src/SMTP.php');
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -15,7 +15,7 @@ use PHPMailer\PHPMailer\Exception;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> RESERVER </title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/public/files/assets/css/style.css">
 </head>
 <body>
         <svg version="1.1" id="home-anim" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1820 1080" preserveAspectRatio="xMidYMid slice" style="enable-background:new 0 0 1820 1080;" xml:space="preserve">
@@ -128,7 +128,7 @@ use PHPMailer\PHPMailer\Exception;
 </svg>
     <header>
 
-        <?php require_once("./assets/modules/header.php");   ?>
+        <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/public/files/assets/modules/header.php");   ?>
 
     </header>
 
@@ -349,7 +349,7 @@ L'atelier du barbier
 
     <footer> 
 
-        <?php require_once("./assets/modules/footer.php");   ?> 
+        <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/public/files/assets/modules/footer.php");   ?> 
 
     </footer>
 </body>

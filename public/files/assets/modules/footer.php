@@ -6,16 +6,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/public/files/assets/css/style.css">
 </head>
 <body>
     <footer id="footer">
     <div class="footer_link">
-        <a href="mentions.php">Mentions légales</a>
+        <a href="/public/files/mentions.php">Mentions légales</a>
         <span class="separator">|</span>
-        <a href="cookies.php">Cookies</a>
+        <a href="/public/files/cookies.php">Cookies</a>
         <span class="separator">|</span>
-        <a href="a_propos.php">A propos</a><br>
+        <a href="/public/files/a_propos.php">A propos</a><br>
     </div>
 
     <div class="copyright">
