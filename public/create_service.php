@@ -1,5 +1,35 @@
 <!-- test si admin -->
 <?php include_once(__DIR__ . "/../backend/other/is_admin_test.php");
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $title = $_POST['title'] ?? '';
+    $description = $_POST['description'] ?? '';
+    $duration = $_POST['duration'] ?? '';
+    $price = $_POST['price'] ?? '';
+    
+
+    if (!empty($title) && !empty($description) && !empty($duration) && !empty($price)){
+
+
+        $sql = "INSERT INTO services 
+        (nom, description, duree_minutes, prix_euros) 
+        VALUES (:nom, :description, :duree_minutes, :prix_euros)";
+
+        $stmt = $pdo->prepare($sql);
+
+        $stmt->execute([
+            ':prix_euros' => $price,
+            ':description' => $description,
+            ':duree_minutes' => $duration,
+            ':nom' => $title
+        ]);
+
+        echo "Service ajoute.";
+    } else {
+        echo "Remplis tous les champs.";
+    };
+};
 ?>
 
 <!DOCTYPE html>
@@ -163,39 +193,7 @@
                 </div>    
         
         
-            </form>
-<?php
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $title = $_POST['title'] ?? '';
-    $description = $_POST['description'] ?? '';
-    $duration = $_POST['duration'] ?? '';
-    $price = $_POST['price'] ?? '';
-    
-
-    if (!empty($title) && !empty($description) && !empty($duration) && !empty($price)){
-
-
-        $sql = "INSERT INTO services 
-        (nom, description, duree_minutes, prix_euros) 
-        VALUES (:nom, :description, :duree_minutes, :prix_euros)";
-
-        $stmt = $pdo->prepare($sql);
-
-        $stmt->execute([
-            ':prix_euros' => $price,
-            ':description' => $description,
-            ':duree_minutes' => $duration,
-            ':nom' => $title
-        ]);
-
-        echo "Service ajoute.";
-    } else {
-        echo "Remplis tous les champs.";
-    };
-};
-?>
+</form>
         </div>
         
     </section>

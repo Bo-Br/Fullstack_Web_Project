@@ -158,7 +158,7 @@ session_start();
 <?php
 $sql = "SELECT * FROM services";
 $stmt = $pdo->query($sql);
-
+// Ajouter les services de la BDD
 while ($service = $stmt->fetch()) {
 
         echo("<div class='card_service box_shadow'>");
