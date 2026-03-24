@@ -168,7 +168,7 @@ session_start();
 
                     </div>
                     <div class = "reservation_item ">
-                        <p> <br></p>
+                        <label>Horaire:</label>
                         <select name="horaire" class = "reservation__horaire" required >
                             <option value="">Choisir un horaire</option>
             
@@ -220,7 +220,7 @@ session_start();
                  </div>
                 
                 <div class = "reservation_line">
-                    <button type="submit" name="submit" class="btn_submit">Submit</button>
+                    <button type="submit" name="submit" class="btn_submit">Réserver</button>
                 </div>    
         
         

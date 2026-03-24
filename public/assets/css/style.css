@@ -701,8 +701,18 @@ footer {
     margin-top: 1rem;
 }
 
+.reservation_item label{
+    margin-bottom: 0.5rem;
+}
+
 .reservation_item select {
     margin-right: 5px;
+    width: 9rem;
+    height: 2rem;
+    display: flex;
+    border-style: none;
+    border-radius: 0.6rem;
+    padding-left: 0.5rem;
 }
 
 .reservation__service {
@@ -723,16 +733,18 @@ footer {
 
 .reservation__horaire {
     display: flex;
-    align-items: center;  
+    align-items: center; 
+    height: 1.3rem;
 }
 
 input {
     border-style: none;
     border-radius: 10px;
-    height: 1.3rem !important;
+    height: 2rem !important;
     width: 15rem !important;
     max-width: 100% !important;
     box-sizing: border-box;
+    padding-left: 0.5rem;
 }
 
 .btn_submit {
@@ -743,6 +755,7 @@ input {
     width: fit-content;
     align-items: center;
     margin-top: 1rem;
+    
 }
 
 /* ---------------------- */
@@ -758,16 +771,16 @@ form {
     align-items: center;
 }
 
-.login input {
-    height: 1.3rem !important;
-    width: 15rem !important;
-    max-width: 100% !important;
-}
+
 
 .btn_login {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+}
+
+.btn_login .btn_submit{
+    width: 10rem;
 }
 
 section {
