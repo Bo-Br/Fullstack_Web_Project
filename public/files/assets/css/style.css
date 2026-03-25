@@ -941,6 +941,14 @@ td {
 /* ---- MEDIA QUERIES (RESPONSIVE) ------ */
 /* -------------------------------------- */
 
+@media screen and (max-width: 768px) {
+    .date_horaire{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 @media screen and (max-width: 992px) {
     
     .hero_content {
@@ -981,7 +989,7 @@ td {
         margin-top: 1rem;
     }
     
-    
+} 
 @media screen and (max-width: 768px) {
         
     .info_salon {
@@ -1018,7 +1026,7 @@ td {
     padding: 1rem;
     border-width: 5px;
 }
-}
+
 
 @media (max-width: 768px) {
     .table-wrapper {

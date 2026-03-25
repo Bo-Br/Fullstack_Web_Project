@@ -3,7 +3,7 @@
 
 <?php
 
-include_once($_SERVER['DOCUMENT_ROOT'] . "/public/backend/other/get_db.php"); // Connection a la BDD
+require_once($_SERVER['DOCUMENT_ROOT'] . "/public/backend/other/get_db.php"); // Connection a la BDD
 
 ?>
 

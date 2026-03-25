@@ -1,9 +1,9 @@
 <?php
 
-$host = 'sql104.infinityfree.com';
-$dbname = 'if0_41343328_fullstack_web';
-$username = 'if0_41343328';
-$password = 'rjw8p95Gcxvd';
+$host = 'localhost';
+$dbname = 'fullstack_web';
+$username = 'root';
+$password = '';
 $port = '3306';
 
 try {
@@ -21,5 +21,3 @@ try {
     // 3 - on gère les erreurs
     echo "Erreur de connexion : " . $e->getMessage();
 }
-
-?>
