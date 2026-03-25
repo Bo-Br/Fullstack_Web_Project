@@ -668,6 +668,8 @@ footer {
 .main_reservation {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .main_reservation select {
@@ -980,19 +982,19 @@ td {
     }
     
     
-    @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
         
-        .info_salon {
-            flex-direction: row; 
-            justify-content: space-around;
-            align-items: flex-start;
-            margin: 0 0.5rem; 
-            gap: 0.5rem;
-        }
+    .info_salon {
+        flex-direction: row; 
+        justify-content: space-around;
+        align-items: flex-start;
+        margin: 0 0.5rem; 
+        gap: 0.5rem;
+    }
         
         
-        .info_salon img {
-            width: 1.5rem;
+    .info_salon img {
+         width: 1.5rem;
         height: 1.5rem;
     }
 
@@ -1028,6 +1030,11 @@ td {
     }
 }
 
+@media (max-width: 768px) {
+    .creation{
+        display: none;
+    }
+}
 /* ---------------------- */
 /* ------- A PROPOS ------- */
 /* -------------------- */
